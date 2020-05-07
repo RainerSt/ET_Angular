@@ -26,6 +26,8 @@
           Java-Code</Button>&nbsp;&nbsp;
     <Button (click)="jscipt()"  class="btn btn-outline-info btn-sm" disabled>
           JS-Code</Button>&nbsp;&nbsp;
+    <button class="btn btn-outline-danger  btn-sm" 
+          (click)="dismiss()">Löschen</button>&nbsp;
     <Button (click)="hilfe()"  class="btn btn-outline-info btn-sm" >
           ?</Button>
   
@@ -79,7 +81,5 @@
           *ngIf="! maxActions">+</button>
   <br/><br/>
   
-  <button class="btn btn-outline-danger  btn-sm" 
-          (click)="dismiss()">Löschen</button>&nbsp;
-
+  
 </div>

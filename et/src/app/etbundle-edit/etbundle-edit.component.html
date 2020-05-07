@@ -20,7 +20,12 @@
 
 
 </div>
-
+<div  class="etnavbar" id="etnavbar">
+  <Button *ngFor="let et of etbundle.ets">
+     {{et.id}} {{et.name}}
+  </Button>
+  <Button >+</Button>
+</div>
 <div *ngFor="let et of etbundle.ets">
       <app-et-edit [et] =  et></app-et-edit>
 </div>

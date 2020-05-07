@@ -45,7 +45,6 @@ export class ETEditComponent implements OnInit {
     var actioncount = this.et.actions.length;
     for(let j=0; j < this.et.actions[0].rules.length; j++){
        var neuerAktionsAnzeiger:AktionsAnzeiger ={
-          id: j,
           value: "-"
        }
        neueaktion.rules[j] = neuerAktionsAnzeiger;
@@ -65,7 +64,6 @@ export class ETEditComponent implements OnInit {
     var bedingungscount = this.et.conditions.length;
     for(let j=0; j < this.et.conditions[0].rules.length; j++){
        var neuerBedingungsAnzeiger:BedingungsAnzeiger ={
-          id: j,
           value: "-",
           fehlerhaft: false
        }
