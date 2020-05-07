@@ -1,0 +1,66 @@
+$background:rgb(240, 240, 240);
+$focusbackground:rgb(85, 225, 250);
+$error:rgb(255, 181, 197);
+
+.toolbar-right{
+    float:center;
+}
+
+.anzeiger{
+    width: 3%;
+    border: 0;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: $background;
+}
+.anzeiger:focus{
+    @extend .anzeiger;
+    background-color: $focusbackground;
+}
+
+
+select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+
+
+.etcomment{
+    width: 20%;
+    border: 0;
+    background-color: $background;
+}
+.etcomment:focus{
+    @extend .etcomment;
+    background-color: $focusbackground;
+}
+.etcode{
+    @extend .etcomment;
+}
+
+input.bedingungsanzeiger {
+    @extend .anzeiger;
+    
+}
+.aktionsanzeiger {
+    @extend .anzeiger;
+}
+
+
+.bedingungskommentar {
+    @extend .etcomment;
+}
+
+.bedingungscode {
+    @extend .etcode;
+}
+.aktionskommentar {
+    @extend .etcomment;
+}
+.aktionscode {
+    @extend .etcode;
+}
+
+.fehlerbox{
+    background-color: $error;
+}

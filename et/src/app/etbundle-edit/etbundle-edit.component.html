@@ -1,0 +1,31 @@
+<div>
+  <!-- {{etbundle | json}}-->
+  <div class="form-group">
+    <label for="Project">Project</label>
+    <input [(ngModel)]="etbundle.project" required minlength="3" maxlength="255" type="text" class="form-control" id="Project" aria-describedby="Project"
+           placeholder="project" #project="ngModel">
+  </div>
+
+  <div class="form-group">
+    <label for="Name">Name</label>
+    <input [(ngModel)]="etbundle.name" required minlength="3" maxlength="255" type="text" class="form-control" id="Name" aria-describedby="Name"
+           placeholder="name" #name="ngModel">
+  </div>
+
+  <div class="form-group">
+    <label for="Comment">Comment</label>
+    <input [(ngModel)]="etbundle.comment" required class="form-control" id="Comment" aria-describedby="Comment"
+           placeholder="comment" #comment="ngModel">
+  </div>
+
+
+</div>
+
+<div *ngFor="let et of etbundle.ets">
+      <app-et-edit [et] =  et></app-et-edit>
+</div>
+
+<div>
+  <button class="btn btn-outline-info" (click)="dismiss()">Abbrechen</button>&nbsp;
+  <button type="submit" class="btn btn-primary" (click)="modify()" [disabled]="name.invalid || comment.invalid">Speichern</button>
+</div>

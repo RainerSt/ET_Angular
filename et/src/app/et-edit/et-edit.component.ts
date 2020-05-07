@@ -1,0 +1,94 @@
+import {Component, OnInit, Input} from '@angular/core';
+import {ActivatedRoute, Router} from "@angular/router";
+import {ETService} from "../et.service";
+import {ET} from "../et";
+import {Aktion } from '../aktion';
+import {AktionsAnzeiger } from '../aktionsAnzeiger';
+import { Bedingung } from '../bedingung';
+import {BedingungsAnzeiger } from '../bedingungsAnzeiger';
+
+
+@Component({
+  selector: 'app-et-edit',
+  templateUrl: './et-edit.component.html',
+  styleUrls: ['./et-edit.component.scss']
+})
+
+
+
+export class ETEditComponent implements OnInit {
+  @Input() et :ET; 
+  public id: number;
+  maxRules : boolean = false;
+  maxActions : boolean = false;
+  
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private etService: ETService,
+  ) {
+  }
+
+  ngOnInit() {
+  
+  }
+  dismiss() {
+    this.router.navigate(['/etbundle']);
+  }
+  addAktion(){
+    var neueaktion:Aktion  = {
+      id: 0,
+      comment: "",
+      ausdruck: "",
+      rules:[]
+    }
+    var actioncount = this.et.actions.length;
+    for(let j=0; j < this.et.actions[0].rules.length; j++){
+       var neuerAktionsAnzeiger:AktionsAnzeiger ={
+          id: j,
+          value: "-"
+       }
+       neueaktion.rules[j] = neuerAktionsAnzeiger;
+    }
+    neueaktion.id = actioncount + 1;
+    this.et.actions[actioncount] = neueaktion;
+
+    if (actioncount > 7) this.maxActions = true;
+  }
+  addBedingung(){
+    var neuebedingung:Bedingung  = {
+      id: 0,
+      comment: "",
+      condition: "",
+      rules:[]
+    }
+    var bedingungscount = this.et.conditions.length;
+    for(let j=0; j < this.et.conditions[0].rules.length; j++){
+       var neuerBedingungsAnzeiger:BedingungsAnzeiger ={
+          id: j,
+          value: "-",
+          fehlerhaft: false
+       }
+       neuebedingung.rules[j] = neuerBedingungsAnzeiger;
+    }
+    neuebedingung.id = bedingungscount + 1;
+    this.et.conditions[bedingungscount] = neuebedingung;
+    
+    if (bedingungscount> 3) this.maxRules = true;
+  }
+
+  check() {
+    console.log("Check et " );
+    this.et.bugs = [];
+    this.etService.checkET(this.et);
+  }
+  expand() {
+    console.log("Expand et " );
+    this.etService.expandET(this.et);
+  }
+  collapse() {
+    console.log("Collapse et " );
+    this.etService.collapseET(this.et);
+  }
+
+}

@@ -1,0 +1,362 @@
+{
+  "etbundles": [
+    {
+      "id": 1,
+      "project": "Projekt 1",
+      "name": "Bundle Nummer 1",
+      "comment": "Kommentar Bundle 1 afas ",
+      "ets": [
+        {
+          "id": 1,
+          "name": "ET Nummer 1 Bundle 2",
+          "comment": "Kommentar ET1 afas ",
+          "conditions": [
+            {
+              "id": 1,
+              "comment": "bla 1111 ",
+              "condition": "#B_hasProperty(xxxx)",
+              "rules": [
+                {
+                  "value": "j"
+                },
+                {
+                  "value": "n"
+                },
+                {
+                  "value": "n"
+                }
+              ]
+            },
+            {
+              "id": 2,
+              "comment": "blub11111",
+              "condition": "#B_isEmpty(xxxx)",
+              "rules": [
+                {
+                  "id": 1,
+                  "value": "-"
+                },
+                {
+                  "id": 2,
+                  "value": "j"
+                },
+                {
+                  "id": 3,
+                  "value": "n"
+                }
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "id": 1,
+              "comment": "aktion blaaa1111",
+              "action": "#A_doxxxxx(xxxx)",
+              "rules": [
+                {
+                  "value": "x"
+                },
+                {
+                  "value": "-"
+                },
+                {
+                  "value": "x"
+                }
+              ]
+            },
+            {
+              "id": 2,
+              "comment": "aktion  blub111",
+              "action": "#A_doyyyyyyy(xxxx)",
+              "rules": [
+                {
+                  "value": "-"
+                },
+                {
+                  "value": "x"
+                },
+                {
+                  "value": "x"
+                }
+              ]
+            },
+            {
+              "id": 3,
+              "comment": "ET Nummer 2",
+              "action": "",
+              "rules": [
+                {
+                  "value": "-"
+                },
+                {
+                  "value": "x"
+                },
+                {
+                  "value": "-"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "name": "ET Nummer 2 Bundle 2",
+          "comment": "Kommentar ET2",
+          "conditions": [
+            {
+              "id": 1,
+              "comment": "Das Wetter ist schön",
+              "condition": "#B_isSunshine()",
+              "rules": [
+                {
+                  "value": "j"
+                },
+                {
+                  "value": "j"
+                },
+                {
+                  "value": "n"
+                }
+              ]
+            },
+            {
+              "id": 2,
+              "comment": "Ich habe mehr als 2T Urlaub",
+              "condition": "#B_hasVacancy(#B_getDays())",
+              "rules": [
+                {
+                  "value": "j"
+                },
+                {
+                  "value": "n"
+                },
+                {
+                  "value": "-"
+                }
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "id": 1,
+              "comment": "in den Garten grillen",
+              "action": "#A_doBarbecue()",
+              "rules": [
+                {
+                  "value": "-"
+                },
+                {
+                  "value": "x"
+                },
+                {
+                  "value": "-"
+                }
+              ]
+            },
+            {
+              "id": 2,
+              "comment": "wegfahren",
+              "action": "#A_doGoOutside()",
+              "rules": [
+                {
+                  "value": "x"
+                },
+                {
+                  "value": "-"
+                },
+                {
+                  "value": "-"
+                }
+              ]
+            }
+          ],
+          "fehler": [
+            "Hier werden Fehler angezeigt"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "project": "Projekt 1",
+      "name": "Bundle Nummer 2",
+      "comment": "Kommentar Bundle 2 afas ",
+      "ets": [
+        {
+          "id": 1,
+          "name": "ET Nummer 1 Bundle 2",
+          "comment": "Kommentar ET1 afas ",
+          "conditions": [
+            {
+              "id": 1,
+              "comment": "bla 1111 ",
+              "condition": "#B_hasProperty(xxxx)",
+              "rules": [
+                {
+                  "value": "j"
+                },
+                {
+                  "value": "n"
+                },
+                {
+                  "value": "n"
+                }
+              ]
+            },
+            {
+              "id": 2,
+              "comment": "blub11111",
+              "condition": "#B_isEmpty(xxxx)",
+              "rules": [
+                {
+                  "id": 1,
+                  "value": "-"
+                },
+                {
+                  "id": 2,
+                  "value": "j"
+                },
+                {
+                  "id": 3,
+                  "value": "n"
+                }
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "id": 1,
+              "comment": "aktion blaaa1111",
+              "action": "#A_doxxxxx(xxxx)",
+              "rules": [
+                {
+                  "value": "x"
+                },
+                {
+                  "value": "-"
+                },
+                {
+                  "value": "x"
+                }
+              ]
+            },
+            {
+              "id": 2,
+              "comment": "aktion  blub111",
+              "action": "#A_doyyyyyyy(xxxx)",
+              "rules": [
+                {
+                  "value": "-"
+                },
+                {
+                  "value": "x"
+                },
+                {
+                  "value": "x"
+                }
+              ]
+            },
+            {
+              "id": 3,
+              "comment": "ET Nummer 2",
+              "action": "",
+              "rules": [
+                {
+                  "value": "-"
+                },
+                {
+                  "value": "x"
+                },
+                {
+                  "value": "-"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "name": "ET Nummer 2 Bundle 2",
+          "comment": "Kommentar ET2",
+          "conditions": [
+            {
+              "id": 1,
+              "comment": "Das Wetter ist schön",
+              "condition": "#B_isSunshine()",
+              "rules": [
+                {
+                  "value": "j"
+                },
+                {
+                  "value": "j"
+                },
+                {
+                  "value": "n"
+                }
+              ]
+            },
+            {
+              "id": 2,
+              "comment": "Ich habe mehr als 2T Urlaub",
+              "condition": "#B_hasVacancy(#B_getDays())",
+              "rules": [
+                {
+                  "value": "j"
+                },
+                {
+                  "value": "n"
+                },
+                {
+                  "value": "-"
+                }
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "id": 1,
+              "comment": "in den Garten grillen",
+              "action": "#A_doBarbecue()",
+              "rules": [
+                {
+                  "value": "-"
+                },
+                {
+                  "value": "x"
+                },
+                {
+                  "value": "-"
+                }
+              ]
+            },
+            {
+              "id": 2,
+              "comment": "wegfahren",
+              "action": "#A_doGoOutside()",
+              "rules": [
+                {
+                  "value": "x"
+                },
+                {
+                  "value": "-"
+                },
+                {
+                  "value": "-"
+                }
+              ]
+            }
+          ],
+          "fehler": [
+            "Hier werden Fehler angezeigt"
+          ]
+        }
+      ]
+    },
+    {
+      "project": "aaaaaaaaaa",
+      "name": "bbbbbbbbb",
+      "comment": "ccccccccccccc",
+      "id": 3
+    }
+  ]
+}
