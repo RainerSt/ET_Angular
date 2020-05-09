@@ -5,11 +5,13 @@
      <input [(ngModel)]="et.name" required minlength="5" 
            maxlength="255" type="text" class="form-control" 
            id="Name" aria-describedby="Name"
-           placeholder="Name" #name="ngModel">
+           placeholder="Name" #name="ngModel" 
+           title="name of et" >
 
      <textarea class="form-control" 
                id="exampleFormControlTextarea1" 
                rows="3" 
+               title="comment of et" 
                [(ngModel)]="et.comment"></textarea>
 
       

@@ -1,34 +1,34 @@
 <div>
-  <!-- {{etbundle | json}}-->
+  <!-- {{etbundle | json}} -->
   <div class="form-group">
-    <label for="Project">Project</label>
+    
     <input [(ngModel)]="etbundle.project" required minlength="3" maxlength="255" type="text" class="form-control" id="Project" aria-describedby="Project"
-           placeholder="project" #project="ngModel">
+           placeholder="project" #project="ngModel" title="name of project">
   </div>
 
   <div class="form-group">
-    <label for="Name">Name</label>
     <input [(ngModel)]="etbundle.name" required minlength="3" maxlength="255" type="text" class="form-control" id="Name" aria-describedby="Name"
-           placeholder="name" #name="ngModel">
+           placeholder="name" #name="ngModel"  title="name of et-bundle ">
   </div>
 
   <div class="form-group">
-    <label for="Comment">Comment</label>
-    <input [(ngModel)]="etbundle.comment" required class="form-control" id="Comment" aria-describedby="Comment"
-           placeholder="comment" #comment="ngModel">
+    <textarea [(ngModel)]="etbundle.comment" 
+              required class="form-control" 
+              id="Comment" 
+              aria-describedby="Comment"
+              placeholder="comment" #comment="ngModel" 
+              rows="3"
+              title="comment of et-bundle ">
+            </textarea>
   </div>
+</div>
 
-
-</div>
-<div  class="etnavbar" id="etnavbar">
-  <Button *ngFor="let et of etbundle.ets">
-     {{et.id}} {{et.name}}
-  </Button>
-  <Button >+</Button>
-</div>
-<div *ngFor="let et of etbundle.ets">
-      <app-et-edit [et] =  et></app-et-edit>
-</div>
+<tabs>
+  <tab  *ngFor="let et of etbundle.ets" tabTitle="{{et.id}} {{et.name}}">
+       <app-et-edit [et] = et></app-et-edit>
+  </tab>
+ 
+</tabs>
 
 <div>
   <button class="btn btn-outline-info" (click)="dismiss()">Abbrechen</button>&nbsp;

@@ -11,6 +11,7 @@ import {FormsModule} from "@angular/forms";
 import { ETBundleNewComponent } from './etbundle-new/etbundle-new.component';
 import { ETBundleEditComponent } from './etbundle-edit/etbundle-edit.component';
 import { ETEditComponent } from './et-edit/et-edit.component';
+import { Tab, Tabs } from './_templates/Tabs';
 
 
 @NgModule({
@@ -21,7 +22,9 @@ import { ETEditComponent } from './et-edit/et-edit.component';
     DefaultComponent,
     ETBundleNewComponent,
     ETBundleEditComponent,
-    ETEditComponent
+    ETEditComponent,
+    Tabs,
+    Tab
   ],
   imports: [
     HttpClientModule,
