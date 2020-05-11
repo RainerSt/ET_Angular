@@ -353,65 +353,10 @@
       ]
     },
     {
-      "project": "aaaaa",
-      "name": "bbbbbbbbbbb",
-      "comment": "cccccccccccc",
-      "id": 3,
-      "ets": [
-        {
-          "id": 1,
-          "name": "name of new et",
-          "comment": "comment of new et",
-          "conditions": [
-            {
-              "id": 1,
-              "comment": "new condition comment",
-              "condition": "#BObject_isThatTrue()",
-              "rules": [
-                {
-                  "value": "j",
-                  "fehlerhaft": false
-                },
-                {
-                  "value": "n",
-                  "fehlerhaft": false
-                }
-              ]
-            },
-            {
-              "id": 2,
-              "comment": "asdfasdf",
-              "condition": "",
-              "rules": [
-                {
-                  "value": "-",
-                  "fehlerhaft": false
-                },
-                {
-                  "value": "-",
-                  "fehlerhaft": false
-                }
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "id": 1,
-              "comment": "new action comment",
-              "action": "#AObject_doThat()",
-              "rules": [
-                {
-                  "value": "-"
-                },
-                {
-                  "value": "x"
-                }
-              ]
-            }
-          ],
-          "bugs": []
-        }
-      ]
+      "project": "aaaaaaaaaa",
+      "name": "bbbbbbbbb",
+      "comment": "ccccccccccccc",
+      "id": 3
     }
   ]
 }

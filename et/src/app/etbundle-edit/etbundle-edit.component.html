@@ -26,9 +26,13 @@
 <tabs>
   <tab  *ngFor="let et of etbundle.ets" tabTitle="{{et.id}} {{et.name}}">
        <app-et-edit [et] = et></app-et-edit>
+  </tab> 
+  <tab tabTitle="+">
+    <button   (click)="createET()">Erstelle eine neue ET</button>
   </tab>
- 
+
 </tabs>
+
 
 <div>
   <button class="btn btn-outline-info" (click)="dismiss()">Abbrechen</button>&nbsp;

@@ -35,4 +35,10 @@ export class ETBundleEditComponent implements OnInit {
         this.dismiss();
       })
   }
+
+  createET(){
+    console.log("create new et");
+    this.etService.createNewETinBundle(this.etbundle);
+
+  }
 }

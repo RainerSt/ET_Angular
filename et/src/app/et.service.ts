@@ -1,18 +1,75 @@
 import {Injectable} from '@angular/core';
 import {ET} from "./et";
+import {Bedingung} from "./bedingung";
+import {Aktion} from "./aktion";
 import {ETBundle} from "./etbundle";
 import {BedingungsAnzeiger} from "./bedingungsAnzeiger";
 import {AktionsAnzeiger} from "./aktionsAnzeiger";
 import {HttpClient} from "@angular/common/http";
+import { Action } from 'rxjs/internal/scheduler/Action';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ETService {
-
-
   constructor(private http: HttpClient) {
   }
+  createNewETinBundle(etbundle: ETBundle) {
+    let newid = 1;
+    try {
+      newid = etbundle.ets.length + 1;
+    } catch (error) {
+      etbundle.ets = [];
+    }
+    console.log("createNewETinBundle " + etbundle.id);
+    let newET: ET = {
+      id: newid,
+      name: "name of new et",
+      comment: "comment of new et",
+      conditions:[
+        {
+          id: 1,
+          comment: "new condition comment",
+          condition: "#BObject_isThatTrue()",
+          rules : [
+            {
+              value: "j",
+              fehlerhaft: false
+             } as BedingungsAnzeiger,
+             {
+              value: "n",
+              fehlerhaft: false
+             } as BedingungsAnzeiger
+
+          ]
+
+        } as Bedingung
+      ],
+      actions:[
+        {
+          id: 1,
+          comment: "new action comment",
+          action: "#AObject_doThat()",
+          rules : [
+            {
+              value: "-",
+             } as AktionsAnzeiger,
+             {
+              value: "x",
+             } as AktionsAnzeiger
+
+          ]
+
+        } as Aktion
+      ],
+      bugs:[]
+    } as ET;
+
+    console.log("new ET " + newET);
+    etbundle.ets.push(newET);
+    this.updateETBundle(etbundle);
+  }
+
   createETBundle(etbundle: ETBundle) {
     return this.http.post('http://localhost:3000/etbundles', etbundle);
   }

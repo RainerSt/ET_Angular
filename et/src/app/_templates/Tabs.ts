@@ -10,10 +10,10 @@ import { Component, Input } from '@angular/core';
     `,
     styles: [`
         button.etnavbarfalse{
-          background-color: rgb(193, 211, 250);
+          background-color: rgb(240, 240, 240);
         }
         button.etnavbar{
-        background-color: rgb(193, 211, 250);
+        background-color: rgb(240, 240, 240);
         }
         button.etnavbartrue{
             background-color: rgb(65, 245, 230); 

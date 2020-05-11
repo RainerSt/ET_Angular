@@ -3,6 +3,6 @@ import { AktionsAnzeiger }from "./aktionsAnzeiger";
 export interface Aktion {
   id: number;
   comment: string;
-  ausdruck: string;
+  action: string;
   rules : AktionsAnzeiger[];
 }
