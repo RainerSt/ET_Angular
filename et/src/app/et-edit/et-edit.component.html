@@ -49,10 +49,7 @@
     <input class="bedingungscode" 
            [(ngModel)]="condition.condition"  
             title={{condition.condition}}>
-            
-<!--    <input class="bedingungsanzeiger"  
-           *ngFor="let rule of bedingung.rules" 
-           [(ngModel)]="rule.value">   -->
+            &nbsp;      
 
         <select [(ngModel)]="rule.value" 
            *ngFor="let rule of condition.rules"
@@ -60,17 +57,20 @@
            <option>j</option>
            <option>n</option>
            <option>-</option>
-   </select>          
+        </select>   
+        
+        &nbsp;<button (click)="downBedingung()" title="move down"
+          class="btn btn-outline-info btn-sm">
+          <img src="./assets/arrowdown.png"></button>      
   </div>
-  <button (click)="addBedingung()" *ngIf="! maxRules">+</button>
+  <button (click)="addBedingung()"    *ngIf="! maxRules" class="btn btn-outline-info btn-sm">+</button>
+  <button (click)="removeBedingung()" *ngIf="! minRules" class="btn btn-outline-info btn-sm">-</button>
   <br/>
   <div *ngFor="let action of et.actions">
     <label>{{action.id}}.&nbsp;</label>
     <input class="aktionskommentar" [(ngModel)]="action.comment">
     <input class="aktionscode" [(ngModel)]="action.action">
-<!--    <input class="aktionsanzeiger" 
-           *ngFor="let rule of aktion.rules" 
-           [(ngModel)]="rule.value">   -->
+    &nbsp;
 
     <select [(ngModel)]="rule.value" 
             *ngFor="let rule of action.rules"
@@ -78,9 +78,12 @@
             <option>x</option>
             <option>-</option>
     </select>
+    &nbsp;<button (click)="downAktion()" title="move down" class="btn btn-outline-info btn-sm"><img src="./assets/arrowdown.png"></button>
   </div>
-  <button (click)="addAktion()"
+  <button (click)="addAktion()" class="btn btn-outline-info btn-sm"
           *ngIf="! maxActions">+</button>
+  <button (click)="removeAktion()" class="btn btn-outline-info btn-sm"
+          *ngIf="! minActions">-</button>
   <br/><br/>
   
   

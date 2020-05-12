@@ -21,6 +21,8 @@ export class ETEditComponent implements OnInit {
   public id: number;
   maxRules : boolean = false;
   maxActions : boolean = false;
+  minRules : boolean = false;
+  minActions : boolean = false;
   
   constructor(
     private route: ActivatedRoute,
@@ -39,7 +41,7 @@ export class ETEditComponent implements OnInit {
     var neueaktion:Aktion  = {
       id: 0,
       comment: "",
-      ausdruck: "",
+      action: "",
       rules:[]
     }
     var actioncount = this.et.actions.length;
@@ -53,6 +55,7 @@ export class ETEditComponent implements OnInit {
     this.et.actions[actioncount] = neueaktion;
 
     if (actioncount > 7) this.maxActions = true;
+    if (actioncount == 1) this.minActions = true;
   }
   addBedingung(){
     var neuebedingung:Bedingung  = {
@@ -73,6 +76,7 @@ export class ETEditComponent implements OnInit {
     this.et.conditions[bedingungscount] = neuebedingung;
     
     if (bedingungscount> 3) this.maxRules = true;
+    if (bedingungscount ==1 ) this.minRules = true;
   }
 
   check() {
