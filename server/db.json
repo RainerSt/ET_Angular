@@ -96,6 +96,9 @@
                 }
               ]
             }
+          ],
+          "bugs": [
+            "Hier werden Fehler angezeigt"
           ]
         },
         {
@@ -171,6 +174,9 @@
             }
           ],
           "fehler": [
+            "Hier werden Fehler angezeigt"
+          ],
+          "bugs": [
             "Hier werden Fehler angezeigt"
           ]
         }
@@ -417,7 +423,49 @@
       "project": "xxxxx",
       "name": "yyyy",
       "comment": "zzzzzzzzzzz",
-      "id": 4
+      "id": 4,
+      "ets": [
+        {
+          "id": 1,
+          "name": "name of new et",
+          "comment": "comment of new et",
+          "conditions": [
+            {
+              "id": 1,
+              "comment": "new condition comment",
+              "condition": "#BObject_isThatTrue()",
+              "rules": [
+                {
+                  "value": "j",
+                  "fehlerhaft": false
+                },
+                {
+                  "value": "n",
+                  "fehlerhaft": false
+                }
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "id": 1,
+              "comment": "new action comment",
+              "action": "#AObject_doThat()",
+              "rules": [
+                {
+                  "value": "-"
+                },
+                {
+                  "value": "x"
+                }
+              ]
+            }
+          ],
+          "bugs": [
+            "Hier werden Fehler angezeigt"
+          ]
+        }
+      ]
     }
   ]
 }
