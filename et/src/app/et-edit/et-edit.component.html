@@ -1,90 +1,95 @@
 <div>
-<!--  {{et | json}}-->
-  <br/>
-  <div class="form-group">
-     <input [(ngModel)]="et.name" required minlength="5" 
-           maxlength="255" type="text" class="form-control" 
-           id="Name" aria-describedby="Name"
-           placeholder="Name" #name="ngModel" 
-           title="name of et" >
-
-     <textarea class="form-control" 
-               id="exampleFormControlTextarea1" 
-               rows="3" 
-               title="comment of et" 
-               [(ngModel)]="et.comment"></textarea>
-
+      <!--  {{et | json}}-->
+        <br/>
+        <div class="form-group">
+           <input [(ngModel)]="et.name" required minlength="5" 
+                 maxlength="255" type="text" class="form-control" 
+                 id="Name" aria-describedby="Name"
+                 placeholder="Name" #name="ngModel" 
+                 title="name of et" >
       
-  </div>
-
-  <div class="toolbar-right">
-    <Button (click)="expand()" class="btn btn-outline-info btn-sm" >
-          Expandiere</Button>&nbsp;&nbsp;
-    <Button (click)="collapse()"  class="btn btn-outline-info btn-sm" disabled>
-          Verdichte</Button>&nbsp;&nbsp;
-    <Button (click)="check()"  class="btn btn-outline-info btn-sm">
-          Prüfe</Button>&nbsp;&nbsp;
-    <Button (click)="java()"  class="btn btn-outline-info btn-sm" disabled>
-          Java-Code</Button>&nbsp;&nbsp;
-    <Button (click)="jscipt()"  class="btn btn-outline-info btn-sm" disabled>
-          JS-Code</Button>&nbsp;&nbsp;
-    <button class="btn btn-outline-danger  btn-sm" 
-          (click)="dismiss()">Löschen</button>&nbsp;
-    <Button (click)="hilfe()"  class="btn btn-outline-info btn-sm" >
-          ?</Button>
-  
-  </div>
-
-  <div *ngFor="let bug of et.bugs"   class="fehlerbox">
-      <label>{{bug}}</label>
-  </div>
-
-  <br/>
-  <div *ngFor="let condition of et.conditions">
-    <label>{{condition.id}}.&nbsp;</label>
-    <input class="bedingungskommentar"
-           [(ngModel)]="condition.comment"  
-           title={{condition.comment}}>
-
-    <input class="bedingungscode" 
-           [(ngModel)]="condition.condition"  
-            title={{condition.condition}}>
-            &nbsp;      
-
-        <select [(ngModel)]="rule.value" 
-           *ngFor="let rule of condition.rules"
-           class="aktionsanzeiger">
-           <option>j</option>
-           <option>n</option>
-           <option>-</option>
-        </select>   
+           <textarea class="form-control" 
+                     id="exampleFormControlTextarea1" 
+                     rows="3" 
+                     title="comment of et" 
+                     [(ngModel)]="et.comment"></textarea>
+      
+            
+        </div>
+      
+        <div class="toolbar-right">
+          <Button (click)="expand()" class="btn btn-outline-info btn-sm" >
+                Expandiere</Button>&nbsp;&nbsp;
+          <Button (click)="collapse()"  class="btn btn-outline-info btn-sm" disabled>
+                Verdichte</Button>&nbsp;&nbsp;
+          <Button (click)="check()"  class="btn btn-outline-info btn-sm">
+                Prüfe</Button>&nbsp;&nbsp;
+          <Button (click)="java()"  class="btn btn-outline-info btn-sm" disabled>
+                Java-Code</Button>&nbsp;&nbsp;
+          <Button (click)="jscipt()"  class="btn btn-outline-info btn-sm" disabled>
+                JS-Code</Button>&nbsp;&nbsp;
+          <button class="btn btn-outline-danger  btn-sm" 
+                (click)="dismiss()">Löschen</button>&nbsp;
+          <Button (click)="hilfe()"  class="btn btn-outline-info btn-sm" >
+                ?</Button>
         
-        &nbsp;<button (click)="downBedingung()" title="move down"
-          class="btn btn-outline-info btn-sm">
-          <img src="./assets/arrowdown.png"></button>      
-  </div>
-  <button (click)="addBedingung()"    *ngIf="! maxRules" class="btn btn-outline-info btn-sm">+</button>
-  <button (click)="removeBedingung()" *ngIf="! minRules" class="btn btn-outline-info btn-sm">-</button>
-  <br/>
-  <div *ngFor="let action of et.actions">
-    <label>{{action.id}}.&nbsp;</label>
-    <input class="aktionskommentar" [(ngModel)]="action.comment">
-    <input class="aktionscode" [(ngModel)]="action.action">
-    &nbsp;
-
-    <select [(ngModel)]="rule.value" 
-            *ngFor="let rule of action.rules"
-            class="aktionsanzeiger">
-            <option>x</option>
-            <option>-</option>
-    </select>
-    &nbsp;<button (click)="downAktion()" title="move down" class="btn btn-outline-info btn-sm"><img src="./assets/arrowdown.png"></button>
-  </div>
-  <button (click)="addAktion()" class="btn btn-outline-info btn-sm"
-          *ngIf="! maxActions">+</button>
-  <button (click)="removeAktion()" class="btn btn-outline-info btn-sm"
-          *ngIf="! minActions">-</button>
-  <br/><br/>
-  
-  
-</div>
+        </div>
+      
+        <div *ngFor="let bug of et.bugs"   class="fehlerbox">
+            <label>{{bug}}</label>
+        </div>
+      
+        <br/>
+        <div *ngFor="let condition of et.conditions; 
+                     let last = last;" >
+          <label>{{condition.id}}.&nbsp;</label>
+          <input class="bedingungskommentar"
+                 [(ngModel)]="condition.comment"  
+                 title={{condition.comment}}>
+      
+          <input class="bedingungscode" 
+                 [(ngModel)]="condition.condition"  
+                  title={{condition.condition}}>
+                  &nbsp;      
+      
+              <select [(ngModel)]="rule.value" 
+                 *ngFor="let rule of condition.rules"
+                 class="aktionsanzeiger">
+                 <option>j</option>
+                 <option>n</option>
+                 <option>-</option>
+              </select>   
+              
+              &nbsp;<button (click)="downBedingung()" title="move down"
+                [hidden]="last" class="btn btn-outline-info btn-sm">
+                <img src="./assets/arrowdown.png"></button>      
+        </div>
+        <button (click)="addBedingung()"    *ngIf="! maxRules" class="btn btn-outline-info btn-sm">+</button>
+        <button (click)="removeBedingung()" *ngIf="! minRules" class="btn btn-outline-info btn-sm">-</button>
+        <br/>
+        <div *ngFor="let action of et.actions; 
+                     let last = last;">
+          <label>{{action.id}}.&nbsp;</label>
+          <input class="aktionskommentar" [(ngModel)]="action.comment">
+          <input class="aktionscode" [(ngModel)]="action.action">
+          &nbsp;
+      
+          <select [(ngModel)]="rule.value" 
+                  *ngFor="let rule of action.rules"
+                  class="aktionsanzeiger">
+                  <option>x</option>
+                  <option>-</option>
+          </select>
+          &nbsp;<button (click)="downAktion()" 
+                 title="move down"
+                 [hidden]="last"  class="btn btn-outline-info btn-sm"><img src="./assets/arrowdown.png"></button>
+        </div>
+        <button (click)="addAktion()" class="btn btn-outline-info btn-sm"
+                *ngIf="! maxActions">+</button>
+        <button (click)="removeAktion()" class="btn btn-outline-info btn-sm"
+                *ngIf="! minActions">-</button>
+        <br/><br/>
+        
+        
+      </div>
+      
