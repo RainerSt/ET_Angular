@@ -37,7 +37,7 @@ export class ETEditComponent implements OnInit {
   dismiss() {
     this.router.navigate(['/etbundle']);
   }
-  addAktion(){
+  addAction(){
     var neueaktion:Aktion  = {
       id: 0,
       comment: "",
@@ -57,7 +57,7 @@ export class ETEditComponent implements OnInit {
     if (actioncount > 7) this.maxActions = true;
     if (actioncount == 1) this.minActions = true;
   }
-  addBedingung(){
+  addCondition(){
     var neuebedingung:Bedingung  = {
       id: 0,
       comment: "",
@@ -78,7 +78,17 @@ export class ETEditComponent implements OnInit {
     if (bedingungscount> 3) this.maxRules = true;
     if (bedingungscount ==1 ) this.minRules = true;
   }
+  removeCondition(){ 
+    var conditioncount = this.et.conditions.length;
+    if (conditioncount === 2) return;
+    this.et.conditions.splice(conditioncount - 1,1);
+  }
 
+  removeAction(){ 
+    var actioncount = this.et.actions.length;
+    if (actioncount === 1) return;
+    this.et.actions.splice(actioncount - 1,1);
+  }
   check() {
     console.log("Check et " );
     this.et.bugs = [];

@@ -64,8 +64,8 @@
                 [hidden]="last" class="btn btn-outline-info btn-sm">
                 <img src="./assets/arrowdown.png"></button>      
         </div>
-        <button (click)="addBedingung()"    *ngIf="! maxRules" class="btn btn-outline-info btn-sm">+</button>
-        <button (click)="removeBedingung()" *ngIf="! minRules" class="btn btn-outline-info btn-sm">-</button>
+        <button (click)="addCondition()"    *ngIf="! maxRules" class="btn btn-outline-info btn-sm">+</button>
+        <button (click)="removeCondition()" *ngIf="et.conditions.length > 2" class="btn btn-outline-info btn-sm">-</button>
         <br/>
         <div *ngFor="let action of et.actions; 
                      let last = last;">
@@ -84,10 +84,10 @@
                  title="move down"
                  [hidden]="last"  class="btn btn-outline-info btn-sm"><img src="./assets/arrowdown.png"></button>
         </div>
-        <button (click)="addAktion()" class="btn btn-outline-info btn-sm"
+        <button (click)="addAction()" class="btn btn-outline-info btn-sm"
                 *ngIf="! maxActions">+</button>
-        <button (click)="removeAktion()" class="btn btn-outline-info btn-sm"
-                *ngIf="! minActions">-</button>
+        <button (click)="removeAction()" class="btn btn-outline-info btn-sm"
+                *ngIf="et.actions.length >1">-</button>
         <br/><br/>
         
         
