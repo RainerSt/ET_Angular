@@ -89,6 +89,15 @@ export class ETEditComponent implements OnInit {
     if (actioncount === 1) return;
     this.et.actions.splice(actioncount - 1,1);
   }
+  downCondition(id: number){ 
+    console.log ("condition down " + id);
+  }
+
+  downAction(id: number){ 
+    console.log ("action down " + id);
+    let from = this.et.actions[id -1];
+    let to   = this.et.actions[id];
+  }
   check() {
     console.log("Check et " );
     this.et.bugs = [];
