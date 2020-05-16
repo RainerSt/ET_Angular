@@ -43,6 +43,20 @@
         </div>
       
         <br/>
+
+
+        <div>
+          <label>&nbsp;&nbsp;</label>
+          <label class="bedingungskommentar"></label>
+          <label class="bedingungscode"></label>&nbsp;&nbsp;&nbsp;&nbsp;
+       
+           <!---------------rules of conditions------------------>
+           <label  *ngFor="let rule of et.conditions[0].rules; let i = index"
+                    class="aktionsanzeiger"
+                    (click)="duplicateRule(i)"><img src="./assets/copyRule.png">
+        </label>   
+                
+        </div>
          <!--------------------------------------------------------
           ----------------Conditions              ----------------
           ------------------------------------------------------->

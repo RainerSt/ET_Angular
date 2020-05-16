@@ -141,4 +141,7 @@ export class ETEditComponent implements OnInit {
     this.etService.collapseET(this.et);
   }
 
+  duplicateRule(index: number){
+    console.log("duplicateRule" + index);
+  }
 }
