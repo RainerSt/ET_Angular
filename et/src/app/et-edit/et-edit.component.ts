@@ -91,12 +91,40 @@ export class ETEditComponent implements OnInit {
   }
   downCondition(id: number){ 
     console.log ("condition down " + id);
+    let from = this.et.conditions[id -1];
+    let to   = this.et.conditions[id];
+
+    //save values from
+    let zcondition = from.condition;
+    let zcomment = from.comment;
+    let zrules   = from.rules;
+
+    from.condition = to.condition;
+    from.comment = to.comment;
+    from.rules = to.rules;
+
+    to.condition = zcondition;
+    to.comment = zcomment;
+    to.rules = zrules;
   }
 
   downAction(id: number){ 
     console.log ("action down " + id);
     let from = this.et.actions[id -1];
     let to   = this.et.actions[id];
+
+    //save values from
+    let zaction = from.action;
+    let zcomment = from.comment;
+    let zrules   = from.rules;
+
+    from.action = to.action;
+    from.comment = to.comment;
+    from.rules = to.rules;
+
+    to.action = zaction;
+    to.comment = zcomment;
+    to.rules = zrules;
   }
   check() {
     console.log("Check et " );
