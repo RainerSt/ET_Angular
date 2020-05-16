@@ -85,12 +85,14 @@
                  <option>-</option>
               </select>   
               
-              &nbsp;<button (click)="downCondition(condition.id)" title="move down"
-                [hidden]="last" class="btn btn-outline-info btn-sm">
-                <img src="./assets/arrowdown.png"></button>      
+              &nbsp;<label (click)="downCondition(condition.id)" title="move down"
+                [hidden]="last" class="btn-sm">
+                <img src="./assets/arrowdown.png"></label>      
         </div>
-        <button (click)="addCondition()"    *ngIf="! maxRules" class="btn btn-outline-info btn-sm">+</button>
-        <button (click)="removeCondition()" *ngIf="et.conditions.length > 2" class="btn btn-outline-info btn-sm">-</button>
+        <label (click)="addCondition()"    *ngIf="! maxRules" class="btn-sm">
+              <img src="./assets/plus.png"></label>
+        <label (click)="removeCondition()" *ngIf="et.conditions.length > 2" class="btnbtn-sm">
+              <img src="./assets/minus.png"></label>
         <br/>
         <!--------------------------------------------------------
           ----------------Actions              ----------------
@@ -109,14 +111,14 @@
                   <option>x</option>
                   <option>-</option>
           </select>
-          &nbsp;<button (click)="downAction(action.id)" 
+          &nbsp;<label (click)="downAction(action.id)" 
                  title="move down"
-                 [hidden]="last"  class="btn btn-outline-info btn-sm"><img src="./assets/arrowdown.png"></button>
+                 [hidden]="last"  class="btn-sm"><img src="./assets/arrowdown.png"></label>
         </div>
-        <button (click)="addAction()" class="btn btn-outline-info btn-sm"
-                *ngIf="! maxActions">+</button>
-        <button (click)="removeAction()" class="btn btn-outline-info btn-sm"
-                *ngIf="et.actions.length >1">-</button>
+        <label (click)="addAction()" class="btn-sm"
+                *ngIf="! maxActions"><img src="./assets/plus.png"></label>
+        <label (click)="removeAction()" class="btn-sm"
+                *ngIf="et.actions.length >1"><img src="./assets/minus.png"></label>
         <br/><br/>
         
         
