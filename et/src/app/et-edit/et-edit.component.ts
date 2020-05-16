@@ -143,5 +143,20 @@ export class ETEditComponent implements OnInit {
 
   duplicateRule(index: number){
     console.log("duplicateRule" + index);
+    for(let i=0; i < this.et.conditions.length; i++){
+      var neuerBedingungsAnzeiger:BedingungsAnzeiger ={
+        value: this.et.conditions[i].rules[index].value,
+        fehlerhaft: false
+      }
+      this.et.conditions[i].rules.splice(index + 1, 0, neuerBedingungsAnzeiger)
+    }
+    for(let i=0; i < this.et.actions.length; i++){
+
+      var neuerAktionsAnzeiger:AktionsAnzeiger ={
+        value: this.et.actions[i].rules[index].value
+      }
+      this.et.actions[i].rules.splice(index + 1, 0, neuerAktionsAnzeiger)
+   }
+
   }
 }
