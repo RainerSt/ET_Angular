@@ -18,7 +18,7 @@
         </div>
       
         <div class="toolbar-right">
-          <Button (click)="expand()" class="btn btn-outline-info btn-sm" >
+          <Button (click)="expand()" class="btn btn-outline-info btn-sm" disabled>
                 Expandiere</Button>&nbsp;&nbsp;
           <Button (click)="collapse()"  class="btn btn-outline-info btn-sm" disabled>
                 Verdichte</Button>&nbsp;&nbsp;
@@ -35,11 +35,17 @@
         
         </div>
       
+        <!--------------------------------------------------------
+          ----------------Bugs              ----------------
+          ------------------------------------------------------->
         <div *ngFor="let bug of et.bugs"   class="fehlerbox">
             <label>{{bug}}</label>
         </div>
       
         <br/>
+         <!--------------------------------------------------------
+          ----------------Conditions              ----------------
+          ------------------------------------------------------->
         <div *ngFor="let condition of et.conditions; 
                      let last = last;" >
           <label>{{condition.id}}.&nbsp;</label>
@@ -51,8 +57,8 @@
                  [(ngModel)]="condition.condition"  
                   title={{condition.condition}}>
                   &nbsp;      
-      
-              <select [(ngModel)]="rule.value" 
+           <!---------------rules of conditions------------------>
+           <select [(ngModel)]="rule.value" 
                  *ngFor="let rule of condition.rules"
                  class="aktionsanzeiger">
                  <option>j</option>
@@ -67,13 +73,17 @@
         <button (click)="addCondition()"    *ngIf="! maxRules" class="btn btn-outline-info btn-sm">+</button>
         <button (click)="removeCondition()" *ngIf="et.conditions.length > 2" class="btn btn-outline-info btn-sm">-</button>
         <br/>
+        <!--------------------------------------------------------
+          ----------------Actions              ----------------
+          ------------------------------------------------------->
         <div *ngFor="let action of et.actions; 
                      let last = last;">
           <label>{{action.id}}.&nbsp;</label>
           <input class="aktionskommentar" [(ngModel)]="action.comment">
           <input class="aktionscode" [(ngModel)]="action.action">
           &nbsp;
-      
+          
+          <!---------------rules of actions------------------>
           <select [(ngModel)]="rule.value" 
                   *ngFor="let rule of action.rules"
                   class="aktionsanzeiger">

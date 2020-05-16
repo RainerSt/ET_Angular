@@ -2,7 +2,7 @@ import {Component, OnInit, Input} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {ETService} from "../et.service";
 import {ET} from "../et";
-import {ETChecker} from "../etchecker";
+import {ETHelper} from "../ethelper";
 import {Aktion } from '../aktion';
 import {AktionsAnzeiger } from '../aktionsAnzeiger';
 import { Bedingung } from '../bedingung';
@@ -129,7 +129,7 @@ export class ETEditComponent implements OnInit {
   }
   check() {
     console.log("Check et " );
-    let checker = new ETChecker();
+    let checker = new ETHelper();
     checker.checkET(this.et);
   }
   expand() {

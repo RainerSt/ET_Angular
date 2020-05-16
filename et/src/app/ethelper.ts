@@ -6,7 +6,7 @@ import { checkAndUpdateTextDynamic } from '@angular/core/src/view/text';
 import { initDomAdapter } from '@angular/platform-browser/src/browser';
 
 
-export class ETChecker {
+export class ETHelper {
   private maxExpanded:string[][]
   constructor(
    
