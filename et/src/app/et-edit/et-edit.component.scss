@@ -46,7 +46,14 @@ input.bedingungsanzeiger {
 .aktionsanzeiger {
     @extend .anzeiger;
 }
-
+.aktionsanzeigerhead {
+    @extend .anzeiger;
+    background-color: white;
+}
+.aktionsanzeigerhead:focus {
+    @extend .anzeiger;
+    background-color: $focusbackground;
+}
 
 .bedingungskommentar {
     @extend .etcomment;
