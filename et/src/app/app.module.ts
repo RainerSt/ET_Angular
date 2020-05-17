@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StartComponent } from './start/start.component';
@@ -12,7 +11,8 @@ import { ETBundleNewComponent } from './etbundle-new/etbundle-new.component';
 import { ETBundleEditComponent } from './etbundle-edit/etbundle-edit.component';
 import { ETEditComponent } from './et-edit/et-edit.component';
 import { Tab, Tabs } from './_templates/Tabs';
-
+import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
+import { ConfirmationDialogService } from './confirmation-dialog/confirmation-dialog.service';
 
 
 @NgModule({
@@ -25,7 +25,8 @@ import { Tab, Tabs } from './_templates/Tabs';
     ETBundleEditComponent,
     ETEditComponent,
     Tabs,
-    Tab
+    Tab,
+    ConfirmationDialogComponent
   ],
   imports: [
     HttpClientModule,
@@ -33,7 +34,8 @@ import { Tab, Tabs } from './_templates/Tabs';
     FormsModule,
     AppRoutingModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [ConfirmationDialogService],
+  bootstrap: [AppComponent],
+  entryComponents: [ ConfirmationDialogComponent],
 })
 export class AppModule { }

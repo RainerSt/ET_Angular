@@ -7,7 +7,7 @@ import {Aktion } from '../aktion';
 import {AktionsAnzeiger } from '../aktionsAnzeiger';
 import { Bedingung } from '../bedingung';
 import {BedingungsAnzeiger } from '../bedingungsAnzeiger';
-
+import { ConfirmationDialogService } from '../confirmation-dialog/confirmation-dialog.service';
 
 @Component({
   selector: 'app-et-edit',
@@ -29,6 +29,7 @@ export class ETEditComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private etService: ETService,
+    private confirmationDialogService: ConfirmationDialogService,
   ) {
   }
 
@@ -169,5 +170,16 @@ export class ETEditComponent implements OnInit {
       this.et.actions[i].rules.splice(index,1)
    }
 
+  }
+
+  deleteET(){
+    console.log("delete et " + this.et.name);
+    this.openConfirmationDialog();
+  }
+
+  public openConfirmationDialog() {
+    this.confirmationDialogService.confirm('Please confirm..', 'Do you really want to ... ?')
+    .then((confirmed) => console.log('User confirmed:', confirmed))
+    .catch(() => console.log('User dismissed the dialog (e.g., by using ESC, clicking the cross icon, or clicking outside the dialog)'));
   }
 }
