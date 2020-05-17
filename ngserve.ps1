@@ -1,0 +1,2 @@
+cd et
+ng serve

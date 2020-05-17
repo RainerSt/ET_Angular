@@ -159,4 +159,15 @@ export class ETEditComponent implements OnInit {
    }
 
   }
+
+  removeRule(index: number){
+    console.log("removeRule" + index);
+    for(let i=0; i < this.et.conditions.length; i++){
+      this.et.conditions[i].rules.splice(index, 1)
+    }
+    for(let i=0; i < this.et.actions.length; i++){
+      this.et.actions[i].rules.splice(index,1)
+   }
+
+  }
 }
