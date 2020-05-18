@@ -12,6 +12,7 @@ import { ETBundleEditComponent } from './etbundle-edit/etbundle-edit.component';
 import { ETEditComponent } from './et-edit/et-edit.component';
 import { Tab, Tabs } from './_templates/Tabs';
 import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
+import { ETHelpComponent } from './et-help/et-help.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
     ETEditComponent,
     Tabs,
     Tab,
+    ETHelpComponent,
   ],
   imports: [
     HttpClientModule,
