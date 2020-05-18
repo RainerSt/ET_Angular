@@ -17,13 +17,15 @@
               "condition": "#B_hasProperty(xxxx)",
               "rules": [
                 {
-                  "value": "j"
+                  "value": "j",
+                  "fehlerhaft": false
                 },
                 {
                   "value": "n"
                 },
                 {
-                  "value": "n"
+                  "value": "n",
+                  "fehlerhaft": false
                 }
               ]
             },
@@ -33,16 +35,16 @@
               "condition": "#B_isEmpty(xxxx)",
               "rules": [
                 {
-                  "id": 1,
-                  "value": "-"
+                  "value": "-",
+                  "fehlerhaft": false
                 },
                 {
                   "id": 2,
                   "value": "j"
                 },
                 {
-                  "id": 3,
-                  "value": "n"
+                  "value": "n",
+                  "fehlerhaft": false
                 }
               ]
             }

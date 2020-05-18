@@ -33,7 +33,14 @@
         <td>{{etbundle.name}}</td>
         <td>{{etbundle.comment}}</td>
         <td>
-          <button class="btn btn-outline-danger  btn-sm" (click)="deleteETBundle(etbundle.id)">Delete</button>
+          <button class="btn btn-outline-danger  btn-sm"
+          mwlConfirmationPopover
+                [popoverTitle]="popoverTitle"
+                [popoverMessage]="popoverMessage"
+                placement="left"
+                (confirm)="deleteETBundle(etbundle.id)"
+                (cancel)="cancelClicked = true"
+                 >Delete</button>
           &nbsp;
           <button class="btn btn-primary  btn-sm" (click)="editETBundle(etbundle.id)">Edit</button>
 
