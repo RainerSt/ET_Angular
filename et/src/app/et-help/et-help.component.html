@@ -8,9 +8,9 @@
       <li>ein ET-Bundle</li>
       <li>eine ET</li>
     </ul>
-    <select #t (change)="selectChanged(t.value)"  class="aktionsanzeiger">
+    <select #opt (change)="selectChanged(opt.value)" [(ngModel)]="selectedOption" class="aktionsanzeiger">
       <option>:</option>
-      <option>++</option>
+      <option>+</option>
       <option>-</option>
     </select>
   </ul>

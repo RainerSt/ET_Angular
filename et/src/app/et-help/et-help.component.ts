@@ -6,12 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./et-help.component.scss']
 })
 export class ETHelpComponent implements OnInit {
-
+  public selectedOption:string = ":"
   constructor() { }
 
   ngOnInit() {
   }
   selectChanged(value:string){
     console.log("selected value:" + value)
+    this.selectedOption = ":";
   }
 }

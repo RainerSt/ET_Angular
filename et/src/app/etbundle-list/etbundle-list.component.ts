@@ -15,7 +15,8 @@ export class ETBundleListComponent implements OnInit {
   public flag = false;
   //Delete-Popup
   popoverTitle = 'Lösche ET-Bundle';
-  popoverMessage = 'Soll dieses ET-Bundle endgültig gelöscht werden ?';
+  popoverMessage = 'Soll dieses ET-Bundle endgültig gelöscht werden ?      ' +
+                    'Dies kann nicht rückgängig gemacht werden !';
   confirmClicked = false;
   cancelClicked = false;
 
