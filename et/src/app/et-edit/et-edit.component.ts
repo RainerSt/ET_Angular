@@ -7,7 +7,6 @@ import {Aktion } from '../aktion';
 import {AktionsAnzeiger } from '../aktionsAnzeiger';
 import { Bedingung } from '../bedingung';
 import {BedingungsAnzeiger } from '../bedingungsAnzeiger';
-import { ConfirmationDialogService } from '../confirmation-dialog/confirmation-dialog.service';
 
 @Component({
   selector: 'app-et-edit',
@@ -24,12 +23,18 @@ export class ETEditComponent implements OnInit {
   maxActions : boolean = false;
   minRules : boolean = false;
   minActions : boolean = false;
-  
+
+  //Delete-Popup
+  popoverTitle = 'Lösche ET';
+  popoverMessage = 'Soll diese ET endgültig gelöscht werden ?';
+  confirmClicked = false;
+  cancelClicked = false;
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,
     private etService: ETService,
-    private confirmationDialogService: ConfirmationDialogService,
+
   ) {
   }
 
@@ -174,12 +179,11 @@ export class ETEditComponent implements OnInit {
 
   deleteET(){
     console.log("delete et " + this.et.name);
-    this.openConfirmationDialog();
+    
   }
 
-  public openConfirmationDialog() {
-    this.confirmationDialogService.confirm('Please confirm..', 'Do you really want to ... ?')
-    .then((confirmed) => console.log('User confirmed:', confirmed))
-    .catch(() => console.log('User dismissed the dialog (e.g., by using ESC, clicking the cross icon, or clicking outside the dialog)'));
+  confirm(){
+    console.log("delete confirmed");
   }
+
 }

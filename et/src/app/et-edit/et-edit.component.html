@@ -28,11 +28,23 @@
                 Java-Code</Button>&nbsp;&nbsp;
           <Button (click)="jscipt()"  class="btn btn-outline-info btn-sm" disabled>
                 JS-Code</Button>&nbsp;&nbsp;
-          <button class="btn btn-outline-danger  btn-sm" 
-                (click)="deleteET()">Löschen</button>&nbsp;
+                <Button
+                class="btn btn-outline-danger btn-sm"
+                
+                mwlConfirmationPopover
+                [popoverTitle]="popoverTitle"
+                [popoverMessage]="popoverMessage"
+                placement="left"
+                (confirm)="deleteET()"
+                (cancel)="cancelClicked = true"              
+              >
+               Lösche ET
+              </Button>
+          &nbsp;
           <Button (click)="hilfe()"  class="btn btn-outline-info btn-sm" >
                 ?</Button>
         
+
         </div>
         <!--------------------------------------------------------
           ----------------Bugs              ----------------

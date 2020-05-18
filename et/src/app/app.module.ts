@@ -11,9 +11,7 @@ import { ETBundleNewComponent } from './etbundle-new/etbundle-new.component';
 import { ETBundleEditComponent } from './etbundle-edit/etbundle-edit.component';
 import { ETEditComponent } from './et-edit/et-edit.component';
 import { Tab, Tabs } from './_templates/Tabs';
-import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
-import { ConfirmationDialogService } from './confirmation-dialog/confirmation-dialog.service';
-
+import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
 
 @NgModule({
   declarations: [
@@ -26,16 +24,18 @@ import { ConfirmationDialogService } from './confirmation-dialog/confirmation-di
     ETEditComponent,
     Tabs,
     Tab,
-    ConfirmationDialogComponent
   ],
   imports: [
     HttpClientModule,
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ConfirmationPopoverModule.forRoot({
+      confirmButtonType: 'danger', // set defaults here
+    }),
   ],
-  providers: [ConfirmationDialogService],
+  providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [ ConfirmationDialogComponent],
+  entryComponents: [ ],
 })
 export class AppModule { }
