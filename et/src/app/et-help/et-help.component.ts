@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ETHelpComponent implements OnInit {
   public selectedOption:string = ":"
+  public alleanzeiger:string[] =[":", "+", "-"]
   constructor() { }
 
   ngOnInit() {

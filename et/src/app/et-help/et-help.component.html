@@ -8,9 +8,17 @@
       <li>ein ET-Bundle</li>
       <li>eine ET</li>
     </ul>
-    <select #opt (change)="selectChanged(opt.value)" [(ngModel)]="selectedOption" class="aktionsanzeiger">
-      <option>:</option>
-      <option>+</option>
-      <option>-</option>
+    <select #opt (change)="selectChanged(opt.value)" class="aktionsanzeiger">
+      <option [selected] ="selectedOption" opt="1">:</option>
+      <option  opt="2">+</option>
+      <option  opt="3">-</option>
+    </select>
+
+
+    <select #opt (change)="selectChanged(opt.value)" 
+       name="anzeiger" [(ngModel)]="anzeiger">
+       <option *ngFor="let anzeiger of alleanzeiger" [ngValue]="anzeiger" [selected] ="selectedOption">
+       {{ anzeiger }}
+      </option>
     </select>
   </ul>

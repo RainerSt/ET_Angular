@@ -59,34 +59,23 @@
         <!--------------------------------------------------------
        --------------- duplicate rules             ----------------
         ------------------------------------------------------->
-
-        <div>
-          <label>&nbsp;&nbsp;</label>
-          <label class="bedingungskommentar"></label>
-          <label class="bedingungscode"></label>&nbsp;&nbsp;&nbsp;&nbsp;
-       
-          <!---------------rules of conditions------------------>
-          <label  *ngFor="let rule of et.conditions[0].rules; let i = index"
-                    class="aktionsanzeigerhead"
-                    title="duplicate"
-                    [hidden]="et.conditions[0].rules.length > 31"
-                    (click)="duplicateRule(i)"><img src="./assets/copyRule.png">
-          </label>   
-        </div>
-        <div>
+ 
+          <div>
             <label>&nbsp;&nbsp;</label>
             <label class="bedingungskommentar"></label>
             <label class="bedingungscode"></label>&nbsp;&nbsp;&nbsp;&nbsp;
          
-             <!---------------rules of conditions------------------>
-            <label  *ngFor="let rule of et.conditions[0].rules; let i = index"
-              class="aktionsanzeigerhead"
-              title="remove"
-              [hidden]="et.conditions[0].rules.length < 3"
-              (click)="removeRule(i)"><img src="./assets/minus.png">
-            </label>   
-  
-          </div>
+            <!---------------rules of conditions------------------>
+            <select *ngFor="let rule of et.conditions[0].rules; let i = index"
+                  #opt (change)="actionOnRule(i, opt.value)"
+                   [hidden]="et.conditions[0].rules.length > 31"
+                   class="aktionsanzeiger">
+                  <option>:</option>
+                  <option>+</option>
+                  <option>-</option>
+                </select>
+        </div>  
+ 
          <!--------------------------------------------------------
           ----------------Conditions              ----------------
           ------------------------------------------------------->
@@ -114,6 +103,7 @@
                 [hidden]="last" class="btn-sm">
                 <img src="./assets/arrowdown.png"></label>      
         </div>
+
         <!---------------add remove condition------------------>
         <label (click)="addCondition()"    *ngIf="! maxRules" class="btn-sm">
               <img src="./assets/plus.png"></label>

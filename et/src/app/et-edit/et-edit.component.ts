@@ -177,6 +177,21 @@ export class ETEditComponent implements OnInit {
 
   }
 
+  actionOnRule(index: number, val: string){
+     switch (val) {
+      case "+":
+         this.duplicateRule(index);
+        break;
+    
+       case "-":
+          this.removeRule(index);
+          break;
+      
+       default:
+         break;
+     }
+  }
+
   deleteET(){
     console.log("delete et " + this.et.name);
     
