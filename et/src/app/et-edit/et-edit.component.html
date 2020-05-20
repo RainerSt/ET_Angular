@@ -57,7 +57,7 @@
         <br/>
 
         <!--------------------------------------------------------
-       --------------- duplicate rules             ----------------
+       --------------- actions on rules as dropdown select -------
         ------------------------------------------------------->
  
           <div>
@@ -70,10 +70,9 @@
                   #opt (change)="actionOnRule(i, opt.value)"
                    [hidden]="et.conditions[0].rules.length > 31"
                    class="aktionsanzeiger">
-                  <option>:</option>
-                  <option>+</option>
-                  <option>-</option>
-                </select>
+                  <option *ngFor="let ruleAction of ruleActions">{{ruleAction}}</option>
+
+            </select>
         </div>  
  
          <!--------------------------------------------------------

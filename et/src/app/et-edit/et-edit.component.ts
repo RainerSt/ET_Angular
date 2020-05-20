@@ -29,6 +29,7 @@ export class ETEditComponent implements OnInit {
   popoverMessage = 'Soll diese ET endgültig gelöscht werden ?';
   confirmClicked = false;
   cancelClicked = false;
+  ruleActions = [":", "+", "-" , "x", "c", "."];
 
   constructor(
     private route: ActivatedRoute,
@@ -177,6 +178,19 @@ export class ETEditComponent implements OnInit {
 
   }
 
+  expandRule(index: number){
+     console.log("expandRule: " + index);
+  }
+
+  collapseRule(index: number){
+    console.log("collapseRule: " + index);
+  }
+
+  visualizeRule(index: number){
+    console.log("visualizeRule: " + index);
+  }
+
+
   actionOnRule(index: number, val: string){
      switch (val) {
       case "+":
@@ -184,9 +198,21 @@ export class ETEditComponent implements OnInit {
         break;
     
        case "-":
-          this.removeRule(index);
-          break;
+        this.removeRule(index);
+        break;
+       
+       case "x":
+        this.expandRule(index);
+        break;
+       
+      case "x":
+       this.collapseRule(index);
+        break;
       
+      case ".":
+        this.visualizeRule(index);
+        break;
+              
        default:
          break;
      }
