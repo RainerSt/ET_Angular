@@ -50,7 +50,7 @@
           ----------------Bugs              ----------------
           ------------------------------------------------------->
         <label [hidden]="et.bugs.length < 1"></label>
-        <div *ngFor="let bug of et.bugs; let first = first;" class="fehlerbox">
+        <div *ngFor="let bug of et.bugs; let first = first;" class="alert alert-danger">
             <label>{{bug}}</label>
         </div>
       
@@ -79,7 +79,7 @@
           ----------------Conditions              ----------------
           ------------------------------------------------------->
         <div *ngFor="let condition of et.conditions; 
-                     let last = last;" >
+                     let last = last; let i = index" >
           <label>{{condition.id}}.&nbsp;</label>
           <input class="bedingungskommentar"
                  [(ngModel)]="condition.comment"  
@@ -121,7 +121,7 @@
           
           <!---------------rules of actions------------------>
           <select [(ngModel)]="rule.value" 
-                  *ngFor="let rule of action.rules"
+                  *ngFor="let rule of action.rules; let i = index"
                   class="aktionsanzeiger">
                   <option>x</option>
                   <option>-</option>

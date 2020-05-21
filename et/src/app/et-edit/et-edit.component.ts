@@ -31,6 +31,8 @@ export class ETEditComponent implements OnInit {
   cancelClicked = false;
   ruleActions = [":", "+", "-" , "x", "c", "."];
 
+  visualizedRule:number = 0;
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -188,6 +190,7 @@ export class ETEditComponent implements OnInit {
 
   visualizeRule(index: number){
     console.log("visualizeRule: " + index);
+    this.visualizedRule = index;
   }
 
 
