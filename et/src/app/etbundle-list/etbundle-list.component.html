@@ -2,23 +2,32 @@
   <div class="col-12">
     <app-etbundle-new *ngIf="flag" (formClose)="flag = false; ($event)? getETBundles(): null"></app-etbundle-new>
     <br/>
-    <button *ngIf="!flag" 
-             class="btn btn-outline-primary btn-sm" 
-             (click)="flag = true">Neues ET-Bundle</button>
-
+    
     &nbsp;&nbsp;
       <div class="form-group">
+
         <div class="input-group">
-          <div class="input-group-addon">
-            <i class="glyphicon glyphicon-search"></i>
-          </div>
+
+
+          <button class="btn btn-outline-primary btn-sm"
+                  (click)="searchInBundle()">
+            <img src="assets/search.png">
+          </button>
+
           <input
             type="text"
             class="form-control"
             name="searchString"
             placeholder="Type to search..."
             [(ngModel)]="searchString"
+            (keyup.enter)="searchInBundle()"
           />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <button *ngIf="!flag" 
+          class="btn btn-outline-primary btn-sm" 
+          (click)="flag = true">Neues ET-Bundle</button>
+         
         </div>
       </div>
     

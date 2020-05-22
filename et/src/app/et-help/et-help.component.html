@@ -1,24 +1,16 @@
 
   <h2>Hilfe</h2>
-  <ul>
-    <li><a href="help">Was ist ein ET-Bundle ?</a></li>
-    <li>Was ist eine ET ?</li>
-    <li>Wie erstelle ich ?</li>
+  <ol>
+    <li><a class="nav-link" routerLink="/help">Was ist ein ET-Bundle</a></li>
+    <li><a class="nav-link" routerLink="/help">Was ist eine ET ?</a></li>
+    <li><a class="nav-link" routerLink="/help">Wie erstelle ich...</a></li>
     <ul>
-      <li>ein ET-Bundle</li>
-      <li>eine ET</li>
+      <li><a class="nav-link" routerLink="/help">...ein ET-Bundle</a></li>
+      <li><a class="nav-link" routerLink="/help">...eine ET</a></li>
     </ul>
-    <select #opt (change)="selectChanged(opt.value)" class="aktionsanzeiger">
-      <option [selected] ="selectedOption" opt="1">:</option>
-      <option  opt="2">+</option>
-      <option  opt="3">-</option>
-    </select>
-
-
-    <select #opt (change)="selectChanged(opt.value)" 
-       name="anzeiger" [(ngModel)]="anzeiger">
-       <option *ngFor="let anzeiger of alleanzeiger" [ngValue]="anzeiger" [selected] ="selectedOption">
-       {{ anzeiger }}
-      </option>
-    </select>
-  </ul>
+    <br/><br/><br/><br/>
+    <h5><a id="bundle"></a>Was ist ein ET-Bundle ?</h5>
+    <h5><a id="et"></a>Was ist eine ET ?</h5>
+    <h5><a id="et"></a>Wie erstelle ich...</h5>
+  </ol>
+  

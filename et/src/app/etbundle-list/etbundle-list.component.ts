@@ -45,5 +45,7 @@ export class ETBundleListComponent implements OnInit {
         this.getETBundles();
       });
   }
-
+  searchInBundle(){
+    console.log("searchInBundle")
+  }
 }

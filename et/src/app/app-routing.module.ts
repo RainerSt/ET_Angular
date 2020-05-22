@@ -29,6 +29,9 @@ const routes: Routes = [
   {   path: 'help',
      component: ETHelpComponent
   },
+  {   path: 'help#bundle',
+     component: ETHelpComponent
+  },
   {
     path: '**',
     component: DefaultComponent
