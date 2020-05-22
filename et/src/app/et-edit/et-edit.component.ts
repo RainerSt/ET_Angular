@@ -150,8 +150,8 @@ export class ETEditComponent implements OnInit {
 
   expand() {
     console.log("Expand et " );
-    this.et.bugs.push ("Expand Rules not implemented");
-    this.etService.expandET(this.et);
+    let expander = new ETHelperExpand();
+     expander.expandET(this.et);
   }
   collapse() {
     console.log("Collapse et " );

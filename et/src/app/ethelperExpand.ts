@@ -11,6 +11,13 @@ export class ETHelperExpand {
     
   }
 
+  expandET(et: ET){
+    for(let i=0; i<et.conditions.length;i++){
+      for(let j=0; j<et.conditions[0].rules.length; j++){
+        this.expandRule(et, j);
+      }
+    }
+  }
 
   expandRule(et: ET, index:Number){
      console.log ("expandRule " + index );

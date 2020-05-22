@@ -3,6 +3,8 @@ import {ETBundle} from "../etbundle";
 import {ETService} from "../et.service";
 import {Observable} from "rxjs";
 import {Router} from "@angular/router";
+import { FilterPipe } from '../filter-pipe.pipe';
+
 
 @Component({
   selector: 'app-etbundle-list',
