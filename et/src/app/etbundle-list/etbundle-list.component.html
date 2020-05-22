@@ -7,14 +7,20 @@
              (click)="flag = true">Neues ET-Bundle</button>
 
     &nbsp;&nbsp;
-      <i class="glyphicon glyphicon-search"></i>
-      
-      <input
-         type="text"
-         class="btn-sm"
-         name="searchString"
-         [(ngModel)]="querystring"
-         placeholder="Type to search..."      />
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-addon">
+            <i class="glyphicon glyphicon-search"></i>
+          </div>
+          <input
+            type="text"
+            class="form-control"
+            name="searchString"
+            placeholder="Type to search..."
+            [(ngModel)]="searchString"
+          />
+        </div>
+      </div>
     
     <table class="table table-striped mt-4">
       <thead>

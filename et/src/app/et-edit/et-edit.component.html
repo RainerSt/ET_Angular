@@ -97,7 +97,7 @@
            <select [(ngModel)]="rule.value" 
                  *ngFor="let rule of condition.rules; let i = index"
                  [class]="{
-                  'aktionsanzeiger': visualizedRule == i,
+                  'aktionsanzeigerhl': visualizedRule == i,
                   'aktionsanzeiger': visualizedRule != i
                  }"
                  >
@@ -132,7 +132,7 @@
                   *ngFor="let rule of action.rules; let i = index"
                   class="aktionsanzeiger"
                   [class]="{
-                        'aktionsanzeiger': visualizedRule == i,
+                        'aktionsanzeigerhl': visualizedRule == i,
                         'aktionsanzeiger': visualizedRule != i
                        }"
                   >

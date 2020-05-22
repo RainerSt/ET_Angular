@@ -32,7 +32,7 @@ export class ETEditComponent implements OnInit {
   cancelClicked = false;
   ruleActions = [":", "+", "-" , ">", "<", "*"];
 
-  visualizedRule:number = 0;
+  visualizedRule:number = -1;
   hints:string[];
 
   constructor(

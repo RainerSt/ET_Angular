@@ -55,6 +55,11 @@ input.bedingungsanzeiger {
     background-color: $focusbackground;
 }
 
+.aktionsanzeigerhl {
+    @extend .aktionsanzeiger;
+    background-color: rgb(255, 255, 70);
+}
+
 .bedingungskommentar {
     @extend .etcomment;
 }
