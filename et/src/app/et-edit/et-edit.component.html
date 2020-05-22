@@ -73,6 +73,7 @@
                   #opt (change)="actionOnRule(i, opt.value)"
                    [hidden]="et.conditions[0].rules.length > 31"
                    class="aktionsanzeiger"
+                   (click)="actionOnRule(i, '*')"
                    >
                   <option *ngFor="let ruleAction of ruleActions">{{ruleAction}}</option>
 
@@ -100,6 +101,7 @@
                   'aktionsanzeigerhl': visualizedRule == i,
                   'aktionsanzeiger': visualizedRule != i
                  }"
+                
                  >
                  <option>j</option>
                  <option>n</option>

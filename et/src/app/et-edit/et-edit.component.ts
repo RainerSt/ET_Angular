@@ -216,6 +216,7 @@ export class ETEditComponent implements OnInit {
         break;
               
        default:
+        this.visualizedRule = -1;
          break;
      }
   }
