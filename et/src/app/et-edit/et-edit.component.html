@@ -72,7 +72,8 @@
             <select *ngFor="let rule of et.conditions[0].rules; let i = index"
                   #opt (change)="actionOnRule(i, opt.value)"
                    [hidden]="et.conditions[0].rules.length > 31"
-                   class="aktionsanzeiger">
+                   class="aktionsanzeiger"
+                   >
                   <option *ngFor="let ruleAction of ruleActions">{{ruleAction}}</option>
 
             </select>
@@ -95,7 +96,11 @@
            <!---------------rules of conditions------------------>
            <select [(ngModel)]="rule.value" 
                  *ngFor="let rule of condition.rules; let i = index"
-                 class="aktionsanzeiger">
+                 [class]="{
+                  'aktionsanzeiger': visualizedRule == i,
+                  'aktionsanzeiger': visualizedRule != i
+                 }"
+                 >
                  <option>j</option>
                  <option>n</option>
                  <option>-</option>
@@ -125,7 +130,12 @@
           <!---------------rules of actions------------------>
           <select [(ngModel)]="rule.value" 
                   *ngFor="let rule of action.rules; let i = index"
-                  class="aktionsanzeiger">
+                  class="aktionsanzeiger"
+                  [class]="{
+                        'aktionsanzeiger': visualizedRule == i,
+                        'aktionsanzeiger': visualizedRule != i
+                       }"
+                  >
                   <option>x</option>
                   <option>-</option>
           </select>
