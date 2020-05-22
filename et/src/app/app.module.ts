@@ -41,6 +41,5 @@ import { FilterPipe } from './filter-pipe.pipe';
   providers: [],
   bootstrap: [AppComponent],
   entryComponents: [ ],
-  exports: [FilterPipe ],
 })
 export class AppModule { }

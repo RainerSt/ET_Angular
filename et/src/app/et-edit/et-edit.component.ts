@@ -33,7 +33,7 @@ export class ETEditComponent implements OnInit {
   ruleActions = [":", "+", "-" , ">", "<", "*"];
 
   visualizedRule:number = -1;
-  hints:string[];
+  hints:string[] = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -142,6 +142,7 @@ export class ETEditComponent implements OnInit {
     console.log("Check et " );
     let checker = new ETHelper();
     checker.checkET(this.et);
+    this.setHint("ET ist fehlerfrei", true)
   }
   sortRules() {
     console.log("SortRules et " );
@@ -151,12 +152,14 @@ export class ETEditComponent implements OnInit {
   expand() {
     console.log("Expand et " );
     let expander = new ETHelperExpand();
-     expander.expandET(this.et);
+    expander.expandET(this.et);
+    this.setHint("ET wurde erfolgreich expandiert", true)
   }
   collapse() {
     console.log("Collapse et " );
     this.et.bugs.push ("Collapse Rules not implemented");
     this.etService.collapseET(this.et);
+    this.setHint("ET wurde erfolgreich verdichtet", true)
   }
 
   duplicateRule(index: number){
@@ -242,4 +245,13 @@ export class ETEditComponent implements OnInit {
     this.et.bugs.push ("Generate Java not implemented");
   }
 
+
+  setHint(hint:string, ifNoBug:boolean){
+    this.hints = []
+    if (ifNoBug){
+      this.hints.push(hint)
+    }
+
+
+  }
 }

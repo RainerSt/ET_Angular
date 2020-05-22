@@ -42,7 +42,7 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let etbundle of etbundles | filter : 'etbundle.project' : searchString  | async">
+      <tr *ngFor="let etbundle of etbundles | filter : 'etbundle' : searchString  | async">
         <td>{{etbundle.id}}</td>
         <td>{{etbundle.project}}</td>
         <td>{{etbundle.name}}</td>
