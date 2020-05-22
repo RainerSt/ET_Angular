@@ -18,17 +18,20 @@
         </div>
       
         <div class="toolbar-right">
-          <Button (click)="expand()" class="btn btn-outline-info btn-sm" disabled>
+          <Button (click)="expand()" class="btn btn-outline-info btn-sm">
                 Expandiere</Button>&nbsp;&nbsp;
-          <Button (click)="collapse()"  class="btn btn-outline-info btn-sm" disabled>
+          <Button (click)="collapse()"  class="btn btn-outline-info btn-sm">
                 Verdichte</Button>&nbsp;&nbsp;
+          <Button (click)="sortRules()"  class="btn btn-outline-info btn-sm">
+                  Sortiere</Button>&nbsp;&nbsp;
           <Button (click)="check()"  class="btn btn-outline-info btn-sm">
                 Prüfe</Button>&nbsp;&nbsp;
-          <Button (click)="java()"  class="btn btn-outline-info btn-sm" disabled>
+          <Button (click)="java()"  class="btn btn-outline-info btn-sm">
                 Java-Code</Button>&nbsp;&nbsp;
-          <Button (click)="jscipt()"  class="btn btn-outline-info btn-sm" disabled>
+          <Button (click)="jscipt()"  class="btn btn-outline-info btn-sm">
                 JS-Code</Button>&nbsp;&nbsp;
-                <Button
+            
+          <Button
                 class="btn btn-outline-danger btn-sm"
                 
                 mwlConfirmationPopover

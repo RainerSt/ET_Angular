@@ -141,12 +141,19 @@ export class ETEditComponent implements OnInit {
     let checker = new ETHelper();
     checker.checkET(this.et);
   }
+  sortRules() {
+    console.log("SortRules et " );
+    this.et.bugs.push ("Sort Rules not implemented");
+  }
+
   expand() {
     console.log("Expand et " );
+    this.et.bugs.push ("Expand Rules not implemented");
     this.etService.expandET(this.et);
   }
   collapse() {
     console.log("Collapse et " );
+    this.et.bugs.push ("Collapse Rules not implemented");
     this.etService.collapseET(this.et);
   }
 
@@ -208,7 +215,7 @@ export class ETEditComponent implements OnInit {
         this.expandRule(index);
         break;
        
-      case "x":
+      case "c":
        this.collapseRule(index);
         break;
       
@@ -233,13 +240,13 @@ export class ETEditComponent implements OnInit {
 
   
   hilfe(){
-
+    this.et.bugs.push ("Help not implemented");
   }
   jscipt(){
-    
+    this.et.bugs.push ("Generate JavaScript not implemented");
   }
   java(){
-    
+    this.et.bugs.push ("Generate Java not implemented");
   }
 
 }
