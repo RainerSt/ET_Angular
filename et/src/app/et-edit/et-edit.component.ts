@@ -230,4 +230,16 @@ export class ETEditComponent implements OnInit {
     console.log("delete confirmed");
   }
 
+
+  
+  hilfe(){
+
+  }
+  jscipt(){
+    
+  }
+  java(){
+    
+  }
+
 }

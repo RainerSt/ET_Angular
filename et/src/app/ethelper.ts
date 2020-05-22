@@ -1,9 +1,5 @@
-import { Bedingung } from './bedingung';
-import { BedingungsAnzeiger } from './bedingungsAnzeiger';
-import { Aktion } from './aktion';
+
 import { ET } from './et';
-import { checkAndUpdateTextDynamic } from '@angular/core/src/view/text';
-import { initDomAdapter } from '@angular/platform-browser/src/browser';
 
 
 export class ETHelper {

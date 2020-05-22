@@ -19,6 +19,7 @@ export class ETBundleListComponent implements OnInit {
                     'Dies kann nicht rückgängig gemacht werden !';
   confirmClicked = false;
   cancelClicked = false;
+  querystring: string = "";
 
   constructor(
     private etService: ETService,
@@ -44,6 +45,5 @@ export class ETBundleListComponent implements OnInit {
         this.getETBundles();
       });
   }
-
 
 }
