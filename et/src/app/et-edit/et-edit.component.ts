@@ -3,6 +3,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {ETService} from "../et.service";
 import {ET} from "../et";
 import {ETHelper} from "../ethelper";
+import {ETHelperExpand} from "../ethelperExpand";
 import {Aktion } from '../aktion';
 import {AktionsAnzeiger } from '../aktionsAnzeiger';
 import { Bedingung } from '../bedingung';
@@ -29,9 +30,10 @@ export class ETEditComponent implements OnInit {
   popoverMessage = 'Soll diese ET endgültig gelöscht werden ?';
   confirmClicked = false;
   cancelClicked = false;
-  ruleActions = [":", "+", "-" , "x", "c", "."];
+  ruleActions = [":", "+", "-" , ">", "<", "*"];
 
   visualizedRule:number = 0;
+  hints:string[];
 
   constructor(
     private route: ActivatedRoute,
@@ -159,20 +161,8 @@ export class ETEditComponent implements OnInit {
 
   duplicateRule(index: number){
     console.log("duplicateRule" + index);
-    for(let i=0; i < this.et.conditions.length; i++){
-      var neuerBedingungsAnzeiger:BedingungsAnzeiger ={
-        value: this.et.conditions[i].rules[index].value,
-        fehlerhaft: false
-      }
-      this.et.conditions[i].rules.splice(index + 1, 0, neuerBedingungsAnzeiger)
-    }
-    for(let i=0; i < this.et.actions.length; i++){
-
-      var neuerAktionsAnzeiger:AktionsAnzeiger ={
-        value: this.et.actions[i].rules[index].value
-      }
-      this.et.actions[i].rules.splice(index + 1, 0, neuerAktionsAnzeiger)
-   }
+    let expander = new ETHelperExpand();
+    expander.duplicateRule(this.et, index);
 
   }
 
@@ -189,6 +179,8 @@ export class ETEditComponent implements OnInit {
 
   expandRule(index: number){
      console.log("expandRule: " + index);
+     let expander = new ETHelperExpand();
+     expander.expandRule(this.et, index);
   }
 
   collapseRule(index: number){
@@ -203,23 +195,23 @@ export class ETEditComponent implements OnInit {
 
   actionOnRule(index: number, val: string){
      switch (val) {
-      case "+":
+      case this.ruleActions[1]:
          this.duplicateRule(index);
         break;
     
-       case "-":
+       case this.ruleActions[2]:
         this.removeRule(index);
         break;
        
-       case "x":
+       case this.ruleActions[3]:
         this.expandRule(index);
         break;
        
-      case "c":
+      case this.ruleActions[4]:
        this.collapseRule(index);
         break;
       
-      case ".":
+      case this.ruleActions[5]:
         this.visualizeRule(index);
         break;
               

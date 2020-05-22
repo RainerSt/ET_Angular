@@ -94,7 +94,7 @@
                   &nbsp;      
            <!---------------rules of conditions------------------>
            <select [(ngModel)]="rule.value" 
-                 *ngFor="let rule of condition.rules"
+                 *ngFor="let rule of condition.rules; let i = index"
                  class="aktionsanzeiger">
                  <option>j</option>
                  <option>n</option>
