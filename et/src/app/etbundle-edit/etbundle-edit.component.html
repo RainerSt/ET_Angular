@@ -1,21 +1,23 @@
 <div>
   <!-- {{etbundle | json}} -->
   <div class="form-group">
-    
-    <input [(ngModel)]="etbundle.project" required minlength="3" maxlength="255" type="text" class="form-control" id="Project" aria-describedby="Project"
-           placeholder="project" #project="ngModel" title="name of project">
+    <div class="input-group">
 
-    <input [(ngModel)]="etbundle.name" required minlength="3" maxlength="255" type="text" class="form-control" id="Name" aria-describedby="Name"
-           placeholder="name" #name="ngModel"  title="name of et-bundle ">
+      <input [(ngModel)]="etbundle.project" required minlength="3" maxlength="255" type="text" class="form-control" id="Project" aria-describedby="Project"
+            placeholder="project" #project="ngModel" title="name of project">
 
-    <textarea [(ngModel)]="etbundle.comment" 
-              required class="form-control" 
-              id="Comment" 
-              aria-describedby="Comment"
-              placeholder="comment" #comment="ngModel" 
-              rows="3"
-              title="comment of et-bundle ">
-            </textarea>
+      <input [(ngModel)]="etbundle.name" required minlength="3" maxlength="255" type="text" class="form-control" id="Name" aria-describedby="Name"
+            placeholder="name" #name="ngModel"  title="name of et-bundle ">
+    </div>
+      <textarea [(ngModel)]="etbundle.comment" 
+                required class="form-control" 
+                id="Comment" 
+                aria-describedby="Comment"
+                placeholder="comment" #comment="ngModel" 
+                rows="3"
+                title="comment of et-bundle ">
+              </textarea>
+
   </div>
 </div>
 
@@ -37,3 +39,5 @@
   <button class="btn btn-outline-info" (click)="dismiss()">Abbrechen</button>&nbsp;
   <button type="submit" class="btn btn-primary" (click)="modify()" [disabled]="name.invalid || comment.invalid">Speichern</button>
 </div>
+
+<br/><br/><br/><br/><br/>
