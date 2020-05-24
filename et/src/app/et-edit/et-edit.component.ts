@@ -9,6 +9,7 @@ import {AktionsAnzeiger } from '../aktionsAnzeiger';
 import { Bedingung } from '../bedingung';
 import {BedingungsAnzeiger } from '../bedingungsAnzeiger';
 import { ETHelperCollapse } from '../ethelperCollapse';
+import { ETHelperJavaCode } from '../ethelperJavaCode';
 
 @Component({
   selector: 'app-et-edit',
@@ -26,8 +27,9 @@ export class ETEditComponent implements OnInit {
   minRules : boolean = false;
   minActions : boolean = false;
 
-  //Delete-Popup
+  //-Popups
   popoverTitle = 'Lösche ET';
+  javaTitle = 'Java - Code'
   popoverMessage = 'Soll diese ET endgültig gelöscht werden ?';
   confirmClicked = false;
   cancelClicked = false;
@@ -271,7 +273,8 @@ export class ETEditComponent implements OnInit {
     this.et.bugs.push ("Generate JavaScript not implemented");
   }
   java(){
-    this.et.bugs.push ("Generate Java not implemented");
+    let javagen = new ETHelperJavaCode();
+     return javagen.getGeneratedJava(this.et);
   }
 
 

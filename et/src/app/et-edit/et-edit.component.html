@@ -26,7 +26,14 @@
                   Sortiere</Button>&nbsp;&nbsp;
           <Button (click)="check()"  class="btn btn-outline-info btn-sm">
                 Prüfe</Button>&nbsp;&nbsp;
-          <Button (click)="java()"  class="btn btn-outline-info btn-sm">
+          <Button  class="btn btn-outline-info btn-sm"
+          
+                  mwlConfirmationPopover
+                  [popoverTitle]="javaTitle"
+                  [popoverMessage]="java()"
+                  placement="left"
+                  (confirm)="deleteET()"
+                  (cancel)="cancelClicked = true">
                 Java-Code</Button>&nbsp;&nbsp;
           <Button (click)="jscipt()"  class="btn btn-outline-info btn-sm">
                 JS-Code</Button>&nbsp;&nbsp;
