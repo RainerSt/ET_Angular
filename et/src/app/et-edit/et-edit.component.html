@@ -61,13 +61,14 @@
        <!--------------------------------------------------------
           --------------- hinweise              ----------------
           ------------------------------------------------------->
+        <div [hidden]="et.bugs.length > 0">
           <label [hidden]="hints.length < 1"></label>
           <div *ngFor="let hint of hints; let i = index" class="alert alert-info">
             <label>{{hint}}</label>
           </div>
         
           <br/>
-  
+        </div>
         <!--------------------------------------------------------
        --------------- actions on rules as dropdown select -------
         ------------------------------------------------------->
@@ -80,9 +81,10 @@
             <!---------------rules of conditions------------------>
             <select *ngFor="let rule of et.conditions[0].rules; let i = index"
                   #opt (change)="actionOnRule(i, opt.value)"
-                   [hidden]="et.conditions[0].rules.length > 31"
+                   [hidden]="et.conditions[0].rules.length > 32"
                    class="aktionsanzeiger"
                    (click)="actionOnRule(i, '*')"
+                   (contextmenu)="onRightClick(i)"
                    >
                   <option *ngFor="let ruleAction of ruleActions">{{ruleAction}}</option>
 
@@ -110,7 +112,7 @@
                   'aktionsanzeigerhl': visualizedRule == i,
                   'aktionsanzeiger': visualizedRule != i
                  }"
-                
+                 (contextmenu)="toggleConditionValue(rule)"
                  >
                  <option>j</option>
                  <option>n</option>

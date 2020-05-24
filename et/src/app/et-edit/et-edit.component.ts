@@ -8,6 +8,7 @@ import {Aktion } from '../aktion';
 import {AktionsAnzeiger } from '../aktionsAnzeiger';
 import { Bedingung } from '../bedingung';
 import {BedingungsAnzeiger } from '../bedingungsAnzeiger';
+import { ETHelperCollapse } from '../ethelperCollapse';
 
 @Component({
   selector: 'app-et-edit',
@@ -157,13 +158,17 @@ export class ETEditComponent implements OnInit {
   }
   collapse() {
     console.log("Collapse et " );
-    this.et.bugs.push ("Collapse Rules not implemented");
-    this.etService.collapseET(this.et);
+    let collapser = new ETHelperCollapse();
+    collapser.collapseET(this.et);
     this.setHint("ET wurde erfolgreich verdichtet", true)
   }
 
   duplicateRule(index: number){
     console.log("duplicateRule" + index);
+    if (this.et.conditions[0].rules.length === 32){
+      this.et.bugs.push ("Maximale Anzahl an Regeln schon erreicht.");
+      return;
+    }
     let expander = new ETHelperExpand();
     expander.duplicateRule(this.et, index);
 
@@ -171,23 +176,22 @@ export class ETEditComponent implements OnInit {
 
   removeRule(index: number){
     console.log("removeRule" + index);
-    for(let i=0; i < this.et.conditions.length; i++){
-      this.et.conditions[i].rules.splice(index, 1)
-    }
-    for(let i=0; i < this.et.actions.length; i++){
-      this.et.actions[i].rules.splice(index,1)
-   }
-
+    let collapser = new ETHelperCollapse();
+    collapser.removeRule(this.et, index);
   }
 
   expandRule(index: number){
      console.log("expandRule: " + index);
      let expander = new ETHelperExpand();
      expander.expandRule(this.et, index);
+     this.setHint("Regel " + (index + 1) + " erfolgreich expandiert ", true)
   }
 
   collapseRule(index: number){
     console.log("collapseRule: " + index);
+    let collapser = new ETHelperCollapse();
+    collapser.collapseRule(this.et, index);
+    this.setHint("Regel " + (index + 1) + " erfolgreich verdichtet ", true)
   }
 
   visualizeRule(index: number){
@@ -195,6 +199,16 @@ export class ETEditComponent implements OnInit {
     this.visualizedRule = index;
   }
 
+  onRightClick(index: number){
+    console.log("rightClick: " + index);
+    this.visualizedRule = index;
+    return false
+  }
+
+  toggleConditionValue(rule:BedingungsAnzeiger){
+    console.log("toggleConditionValue: " + rule);
+    return false;
+  }
 
   actionOnRule(index: number, val: string){
      switch (val) {

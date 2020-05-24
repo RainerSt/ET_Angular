@@ -22,12 +22,12 @@
 </div>
 
 <tabs>
-  <tab  *ngFor="let et of etbundle.ets" tabTitle="{{et.id}} {{et.name}}">
+  <tab  *ngFor="let et of etbundle.ets" tabTitle="{{et.id}} {{et.name}}" >
        <app-et-edit [et] = et></app-et-edit>
   </tab> 
   <tab tabTitle="+">
     <br/>
-    <button   (click)="createET()">Erstelle eine neue ET</button>
+    <button   (click)="createET()" class="btn btn-outline-info">Erstelle eine neue ET</button>
     <br/>
     <br/>
   </tab>
