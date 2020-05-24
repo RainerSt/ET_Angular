@@ -152,15 +152,30 @@ export class ETEditComponent implements OnInit {
 
   expand() {
     console.log("Expand et " );
+
+    if (this.hasBugs()){
+      this.et.bugs.push ("Nur fehlerfreie ET's können expandiert werden");
+      return;
+    }
     let expander = new ETHelperExpand();
     expander.expandET(this.et);
     this.setHint("ET wurde erfolgreich expandiert", true)
   }
   collapse() {
     console.log("Collapse et " );
+   
+    if (this.hasBugs()){
+      this.et.bugs.push ("Nur fehlerfreie ET's können verdichtet werden");
+      return;
+    }
     let collapser = new ETHelperCollapse();
     collapser.collapseET(this.et);
     this.setHint("ET wurde erfolgreich verdichtet", true)
+  }
+  hasBugs(){
+    this.check();
+    if (this.et.bugs.length > 0) return true;
+    return false
   }
 
   duplicateRule(index: number){
@@ -262,10 +277,10 @@ export class ETEditComponent implements OnInit {
 
   setHint(hint:string, ifNoBug:boolean){
     this.hints = []
-    if (ifNoBug){
+    if (ifNoBug && this.et.bugs.length === 0){
+      this.hints.push(hint)
+    } else {
       this.hints.push(hint)
     }
-
-
   }
 }

@@ -24,6 +24,9 @@ export class ETHelperCollapse {
 
   collapseRule(et: ET, index:number){
      console.log ("collapse " + index );
+     if (et.actions[0].rules.length -1 == index){  //lastrule
+       return
+     }
       if (! this.hasEqualActions(et, index) ){
           if (!this.entireET){
              et.bugs.push ("Aktionen zur nächsten Regel sind unterschiedlich")
