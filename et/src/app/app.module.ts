@@ -13,7 +13,7 @@ import { ETEditComponent } from './et-edit/et-edit.component';
 import { Tab, Tabs } from './_templates/Tabs';
 import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
 import { ETHelpComponent } from './et-help/et-help.component';
-import { FilterPipe } from './filter-pipe.pipe';
+import { FilterdataPipe } from './filterdata.pipe';
 
 @NgModule({
   declarations: [
@@ -27,7 +27,7 @@ import { FilterPipe } from './filter-pipe.pipe';
     Tabs,
     Tab,
     ETHelpComponent,
-    FilterPipe,
+    FilterdataPipe,
   ],
   imports: [
     HttpClientModule,

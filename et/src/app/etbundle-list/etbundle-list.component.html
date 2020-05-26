@@ -19,7 +19,7 @@
             class="form-control"
             name="searchString"
             placeholder="Type to search..."
-            [(ngModel)]="searchString"
+            [(ngModel)]="queryString"
             (keyup.enter)="searchInBundle()"
           />
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -42,7 +42,7 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let etbundle of etbundles | filter : 'etbundle' : searchString  | async">
+      <tr *ngFor="let etbundle of etbundles | async  | filterdata: queryString : 'project' ">
         <td>{{etbundle.id}}</td>
         <td>{{etbundle.project}}</td>
         <td>{{etbundle.name}}</td>

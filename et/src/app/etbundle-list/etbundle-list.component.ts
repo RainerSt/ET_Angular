@@ -3,7 +3,7 @@ import {ETBundle} from "../etbundle";
 import {ETService} from "../et.service";
 import {Observable} from "rxjs";
 import {Router} from "@angular/router";
-import { FilterPipe } from '../filter-pipe.pipe';
+
 
 
 @Component({
@@ -21,8 +21,8 @@ export class ETBundleListComponent implements OnInit {
                     'Dies kann nicht rückgängig gemacht werden !';
   confirmClicked = false;
   cancelClicked = false;
-  searchString: string = "";
-
+  queryString: string = "";
+  
   constructor(
     private etService: ETService,
     private router: Router) {
