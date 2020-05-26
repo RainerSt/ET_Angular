@@ -42,7 +42,7 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let etbundle of etbundles | async  | filterdata: queryString : 'project' ">
+      <tr *ngFor="let etbundle of etbundles | async  | filterdata: queryString : 'project': 'name': 'comment' ">
         <td>{{etbundle.id}}</td>
         <td>{{etbundle.project}}</td>
         <td>{{etbundle.name}}</td>
