@@ -3,6 +3,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {ETService} from "../et.service";
 import {ETBundle} from "../etbundle";
 
+
 @Component({
   selector: 'app-etbundle-edit',
   templateUrl: './etbundle-edit.component.html',
@@ -11,7 +12,7 @@ import {ETBundle} from "../etbundle";
 export class ETBundleEditComponent implements OnInit {
   public id: number;
   public etbundle: ETBundle;
-
+  
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -41,4 +42,5 @@ export class ETBundleEditComponent implements OnInit {
     this.etService.createNewETinBundle(this.etbundle);
 
   }
+ 
 }

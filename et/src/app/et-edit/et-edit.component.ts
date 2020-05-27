@@ -1,4 +1,4 @@
-import {Component, OnInit, Input} from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {ETService} from "../et.service";
 import {ET} from "../et";
@@ -21,6 +21,7 @@ import { ETHelperJavaCode } from '../ethelperJavaCode';
 
 export class ETEditComponent implements OnInit {
   @Input() et :ET; 
+  @Output() etDelete = new EventEmitter();
   public id: number;
   maxRules : boolean = false;
   maxActions : boolean = false;
@@ -258,6 +259,8 @@ export class ETEditComponent implements OnInit {
   deleteET(){
     console.log("delete et " + this.et.name);
     
+      this.etDelete.emit(this.et);
+
   }
 
   confirm(){
