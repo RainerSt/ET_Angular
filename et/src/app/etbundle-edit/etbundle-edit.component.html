@@ -37,8 +37,10 @@
 
 
 <div>
-  <button class="btn btn-outline-info" (click)="dismiss()">Abbrechen</button>&nbsp;
-  <button type="submit" class="btn btn-primary" (click)="modify()" [disabled]="name.invalid || comment.invalid">Speichern</button>
+  <button class="btn btn-outline-info" (click)="dismiss()">
+    <img src="assets/logout.svg" class="image24">&nbsp;&nbsp;Abbrechen</button>&nbsp;
+  <button type="submit" class="btn btn-outline-info" (click)="modify()" [disabled]="name.invalid || comment.invalid">
+    <img src="assets/save.svg" class="image24">&nbsp;&nbsp;Speichern</button>
 </div>
 
 <br/><br/><br/><br/><br/>

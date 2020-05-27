@@ -3,7 +3,7 @@
     {
       "id": 1,
       "project": "Projekt 1",
-      "name": "Bundle Nummer 1",
+      "name": "Bundle Nummer 2",
       "comment": "Kommentar Bundle 1 afas ",
       "ets": [
         {
@@ -176,9 +176,45 @@
           "fehler": [
             "Hier werden Fehler angezeigt"
           ],
-          "bugs": [
-            "Hier werden Fehler angezeigt"
-          ]
+          "bugs": []
+        },
+        {
+          "id": 3,
+          "name": "ET Nummer 3 Bundle 2",
+          "comment": "comment of new et",
+          "conditions": [
+            {
+              "id": 1,
+              "comment": "new condition comment",
+              "condition": "#BObject_isThatTrue()",
+              "rules": [
+                {
+                  "value": "j",
+                  "fehlerhaft": false
+                },
+                {
+                  "value": "n",
+                  "fehlerhaft": false
+                }
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "id": 1,
+              "comment": "new action comment",
+              "action": "#AObject_doThat()",
+              "rules": [
+                {
+                  "value": "-"
+                },
+                {
+                  "value": "x"
+                }
+              ]
+            }
+          ],
+          "bugs": []
         }
       ]
     },
@@ -504,9 +540,9 @@
       "id": 10
     },
     {
-      "project": "ggggg",
-      "name": "ggggggggggggg",
-      "comment": "gggggg",
+      "project": "ggggggggggggg",
+      "name": "ggggggggg",
+      "comment": "gggggggggggggg",
       "id": 11
     }
   ]
