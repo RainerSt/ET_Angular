@@ -19,7 +19,9 @@
     placeholder="comment" #name="ngModel">
   </div>
 
-  <button class="btn btn-outline-info" (click)="dismiss()">Abbrechen</button>&nbsp;
-  <button type="submit" class="btn btn-primary" (click)="create()" [disabled]="name.invalid || project.invalid">Submit</button>
+  <button class="btn btn-outline-info" (click)="dismiss()">
+    <img src="assets/logout.svg" class="image24">&nbsp;&nbsp;Abbrechen</button>&nbsp;
+  <button type="submit" class="btn btn-outline-info" (click)="create()" 
+  [disabled]="name.invalid || project.invalid"><img src="assets/save.svg" class="image24">&nbsp;&nbsp;Speichern</button>
 
 </div>
