@@ -10,6 +10,7 @@ import { Bedingung } from '../bedingung';
 import {BedingungsAnzeiger } from '../bedingungsAnzeiger';
 import { ETHelperCollapse } from '../ethelperCollapse';
 import { ETHelperJavaCode } from '../ethelperJavaCode';
+import { ETHelperSort } from '../ethelperSort';
 
 @Component({
   selector: 'app-et-edit',
@@ -27,6 +28,7 @@ export class ETEditComponent implements OnInit {
   maxActions : boolean = false;
   minRules : boolean = false;
   minActions : boolean = false;
+  sortorderUp = true;
 
   //-Popups
   popoverTitle = 'Lösche ET';
@@ -150,7 +152,10 @@ export class ETEditComponent implements OnInit {
   }
   sortRules() {
     console.log("SortRules et " );
-    this.et.bugs.push ("Sort Rules not implemented");
+    let sorter = new ETHelperSort(this.sortorderUp);
+    this.sortorderUp = !this.sortorderUp
+    sorter.sortETRules(this.et);
+    this.setHint("ET wurde erfolgreich sortiert", true)
   }
 
   expand() {
