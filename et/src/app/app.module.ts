@@ -28,13 +28,14 @@ import { FilterdataPipe } from './filterdata.pipe';
     Tab,
     ETHelpComponent,
     FilterdataPipe,
+    
   ],
   imports: [
     HttpClientModule,
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    ConfirmationPopoverModule.forRoot({
+      ConfirmationPopoverModule.forRoot({
       confirmButtonType: 'danger', // set defaults here
     }),
   ],

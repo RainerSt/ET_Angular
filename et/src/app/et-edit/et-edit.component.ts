@@ -225,8 +225,18 @@ export class ETEditComponent implements OnInit {
 
   toggleConditionValue(rule:BedingungsAnzeiger){
     console.log("toggleConditionValue: " + rule);
+    if (rule.value === "j") rule.value = "n"
+    else if (rule.value === "n") rule.value = "-"
+    else if (rule.value === "-") rule.value = "j"
     return false;
   }
+  toggleActionValue(rule:AktionsAnzeiger){
+    console.log("toggleActionValue: " + rule);
+    if (rule.value === "x") rule.value = "-"
+    else if (rule.value === "-") rule.value = "x"
+    return false;
+  }
+
 
   actionOnRule(index: number, val: string){
      switch (val) {
