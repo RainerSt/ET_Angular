@@ -89,7 +89,10 @@
             <select *ngFor="let rule of et.conditions[0].rules; let i = index"
                   #opt (change)="actionOnRule(i, opt.value)"
                    [hidden]="et.conditions[0].rules.length > 32"
-                   class="aktionsanzeiger"
+                   [class]="{
+                    'aktionsanzeigerhl': visualizedRule == i,
+                    'aktionsanzeiger': visualizedRule != i
+                   }"
                    (click)="actionOnRule(i, '*')"
                    (contextmenu)="onRightClick(i)"
                    >
