@@ -18,7 +18,10 @@ export class ETHelperJavaCode {
       }
     }
 
-    return "this is generated JavaCode:"
+    return "this is generated JavaCode:asfas fsa fasf asf asfas" +
+    "asdfjasdlfk asdflkjas fljas dflkasdflkasdfasdfasdfs" +
+    "asdfjasdlfk asdflkjas fljas dflkasdflkasdfasdfasdfs" +
+    "asdlfj lask fjals dfjlasdkfjasldfjlasdjflasdkfjasl"
   }
 
 

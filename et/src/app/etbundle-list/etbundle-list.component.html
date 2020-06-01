@@ -43,7 +43,7 @@
         <td>{{etbundle.id}}</td>
         <td>{{etbundle.project}}</td>
         <td>{{etbundle.name}}</td>
-        <td>{{etbundle.comment}}</td>
+        <td title="{{etbundle.comment}}">{{etbundle.comment | slice:0:40}}</td>
         <td>
           <button class="btn btn-outline-danger  btn-sm"
           mwlConfirmationPopover
@@ -56,11 +56,15 @@
           &nbsp;
           <button class="btn btn-outline-info  btn-sm" (click)="editETBundle(etbundle.id)">
               <img src="./assets/workon.svg"  class="image24"></button>
-              &nbsp;
+          &nbsp;
           <button class="btn btn-outline-info  btn-sm" (click)="duplicateETBundle(etbundle)">
-                  <img src="./assets/duplicate.svg"  class="image24"></button>
+               <img src="./assets/duplicate.svg"  class="image24"></button>
     
-    
+          &nbsp;
+          <button cass="btn btn-outline-info  btn-sm" (click)="printETBundle(etbundle)">
+               <img src="./assets/printer.svg"  class="image24"></button>
+            
+        
         </td>
       </tr>
       </tbody>

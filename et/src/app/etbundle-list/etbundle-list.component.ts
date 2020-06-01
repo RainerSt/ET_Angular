@@ -34,6 +34,10 @@ export class ETBundleListComponent implements OnInit {
     console.log("duplicate bundle id " + bundle.id)
     this.etService.createETBundle(bundle)
  }
+ printETBundle(bundle: ETBundle) {
+  console.log("print bundle id " + bundle.id)
+
+}
 
   // life cycle hook
   ngOnInit() {

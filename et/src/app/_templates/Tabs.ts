@@ -17,7 +17,7 @@ import { Component, Input } from '@angular/core';
         background-color: rgb(240, 240, 240);
         }
         button.etnavbartrue{
-            background-color: rgb(65, 245, 230); 
+            background-color: #17a2b8; 
         }
         button.etnavbar:hover{
               background-color: rgb(65, 245, 230); 

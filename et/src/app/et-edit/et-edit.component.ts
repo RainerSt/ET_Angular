@@ -289,7 +289,7 @@ export class ETEditComponent implements OnInit {
 
   
   hilfe(){
-    this.et.bugs.push ("Help not implemented");
+    this.hints.push ("Eine Entscheidungstabelle ist ...");
   }
   jscipt(){
     this.et.bugs.push ("Generate JavaScript not implemented");

@@ -14,7 +14,7 @@ export class ETHelperSort {
 
   sortETRules(et: ET){
     
-    for(let i=0; i<et.conditions.length; i++){
+    for(let i=0; i<et.conditions.length * 2; i++){
       let rulescount = et.conditions[0].rules.length
       console.log ("sortETRules  rulecount: " + rulescount)
       for(let i=0; i<et.conditions.length; i++){
