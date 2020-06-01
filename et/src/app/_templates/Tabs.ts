@@ -4,6 +4,7 @@ import { Component, Input } from '@angular/core';
     selector: 'tabs',
     template: `
         <button *ngFor="let tab of tabs" (click)="selectTab(tab)" class="etnavbar{{tab.active}}">
+          <img src="assets/table.svg" class="image24">&nbsp;&nbsp;
           {{tab.tabTitle}}
         </button>
       <ng-content></ng-content>

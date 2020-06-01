@@ -2,9 +2,13 @@
   <!-- {{etbundle | json}} -->
   <br/>
   <div>
-    <button class="btn btn-outline-info" (click)="dismiss()">
+    <button class="btn btn-outline-info" (click)="dismiss()"
+           title="Zurück zur Übersicht"
+        >
       <img src="assets/logout.svg" class="image24">&nbsp;&nbsp;Abbrechen</button>&nbsp;
-    <button i18n type="submit" class="btn btn-outline-info" (click)="modify()" [disabled]="name.invalid || comment.invalid">
+    <button i18n type="submit" class="btn btn-outline-info" (click)="modify()"
+           [disabled]="name.invalid || comment.invalid"
+           title="Speichert das ET-Bundle">
       <img src="assets/save.svg" class="image24">&nbsp;&nbsp;Speichern</button>
   </div>
   <br/>
