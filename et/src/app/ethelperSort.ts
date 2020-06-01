@@ -30,7 +30,25 @@ export class ETHelperSort {
   }
 
   isInSortOrder(sortorderUp:boolean, et:ET, condNr:number, ruleNr:number){
-      return et.bugs.push ("sort to be done...")
+      
+      let ruleAsString:string = ""
+      let nextRuleAsString:string  = ""
+      for(let i=0; i<et.conditions.length; i++){
+        let value = et.conditions[i].rules[ruleNr].value
+        let nextvalue = et.conditions[i].rules[ruleNr].value
+        ruleAsString = ruleAsString + value
+        nextRuleAsString = nextRuleAsString + nextvalue
+      }
+
+      console.log ("Sortstring:     " + ruleAsString)
+      console.log ("Sortstring nxt: " + nextRuleAsString)
+
+      if (sortorderUp){
+         if (nextRuleAsString > ruleAsString) return true
+      } else{
+         if (nextRuleAsString < ruleAsString) return true
+      }
+      
   }
 
   changePosition(et: ET, index: number){

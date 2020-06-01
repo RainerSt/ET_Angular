@@ -150,12 +150,19 @@ export class ETEditComponent implements OnInit {
     checker.checkET(this.et);
     this.setHint("ET ist fehlerfrei", true)
   }
-  sortRules() {
+  sortRulesUp() {
     console.log("SortRules et " );
     let sorter = new ETHelperSort(this.sortorderUp);
-    this.sortorderUp = !this.sortorderUp
+    this.sortorderUp = true
     sorter.sortETRules(this.et);
-    this.setHint("ET wurde erfolgreich sortiert", true)
+    this.setHint("ET wurde erfolgreich aufwärts sortiert", true)
+  }
+  sortRulesDown() {
+    console.log("SortRules et " );
+    let sorter = new ETHelperSort(this.sortorderUp);
+    this.sortorderUp = false
+    sorter.sortETRules(this.et);
+    this.setHint("ET wurde erfolgreich abwärts sortiert", true)
   }
 
   expand() {
