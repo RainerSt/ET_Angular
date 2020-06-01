@@ -30,6 +30,11 @@ export class ETBundleListComponent implements OnInit {
   editETBundle(id: number) {
      this.router.navigate(['/etbundle', id]);
   }
+  duplicateETBundle(bundle: ETBundle) {
+    console.log("duplicate bundle id " + bundle.id)
+    this.etService.createETBundle(bundle)
+ }
+
   // life cycle hook
   ngOnInit() {
     this.getETBundles();

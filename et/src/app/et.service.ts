@@ -71,7 +71,10 @@ export class ETService {
   }
 
   createETBundle(etbundle: ETBundle) {
-    return this.http.post('http://localhost:3000/etbundles', etbundle);
+    console.log("create Bundle: " + etbundle)
+    let rc = this.http.post('http://localhost:3000/etbundles', etbundle)
+    console.log("create Bundle rc: " + rc)
+    return rc;
   }
   deleteETBundle(id: number) {
     return this.http.delete('http://localhost:3000/etbundles/' + id);
