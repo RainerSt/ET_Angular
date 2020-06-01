@@ -1,11 +1,61 @@
-button.etnavbar{
-    background-color: rgb(236, 242, 255);
+$background:white;
+
+
+
+.anzeiger{
+    width: 5%;
+    border: 0;
+    text-align: center;
+    text-align-last:center;
+    text-transform: uppercase;
+    background-color: $background;
+}
+
+.etcomment{
+    width: 20%;
+    border: 0;
+    background-color: $background;
+}
+
+.etcode{
+    @extend .etcomment;
+}
+
+input.bedingungsanzeiger {
+    @extend .anzeiger;
     
 }
-button.etnavbar:hover{
-    background-color: rgb(178, 233, 228);
-
+.aktionsanzeiger {
+    @extend .anzeiger;
 }
-.center{
-    text-align: center;
+.aktionsanzeigerhead {
+    @extend .anzeiger;
+    background-color: white;
+}
+
+.bedingungskommentar {
+    @extend .etcomment;
+}
+
+.bedingungscode {
+    @extend .etcode;
+}
+.aktionskommentar {
+    @extend .etcomment;
+}
+.aktionscode {
+    @extend .etcode;
+}
+
+
+table, th {
+    border: 1px solid grey;
+    border-collapse: collapse;
+}
+table, td {
+    border: 1px solid grey;
+    border-collapse: collapse;
+}
+th {
+    background-color: rgb(228, 228, 228);
 }

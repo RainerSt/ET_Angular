@@ -21,42 +21,47 @@
 
   </div>
 
-  <div  *ngFor="let et of etbundle.ets" tabTitle="{{et.id}} {{et.name}}" >
+  <div  *ngFor="let et of etbundle.ets">
     <p>ET: <b>{{et.id}} {{et.name}}</b></p>
 
     <p>Comment:</p>
     <p>{{et.comment}}</p>
-    <table>
+    <table class="printtable">
        <th>
-          <tr>
-              <td>Condition</td><td>Code</td><td>Rules</td>
+          <tr >
+              <td>Condition</td>
+              <td>Code</td>
+              <td>Rules</td>
           </tr>
       </th>
       <tr *ngFor="let condition of et.conditions">
-        <td>{{condition.comment}}</td>
-        <td>{{condition.condition}}</td>
+        <td class="bedingungskommentar">{{condition.comment}}</td>
+        <td class="bedingungscode">{{condition.condition}}</td>
         <td>
-           <div class="anzeiger" *ngFor="let rule of condition.rules">
+           <label class="anzeiger" *ngFor="let rule of condition.rules">
               {{rule.value}}
-           </div>
+           </label>
         </td>
       </tr>
 
       <th>
         <tr>
-            <td>Action</td><td>Code</td><td>Rules</td>
+            <td>Action</td>
+            <td>Code</td>
+            <td>Rules</td>
         </tr>
     </th>
     <tr *ngFor="let action of et.actions">
-      <td>{{action.comment}}</td>
-      <td>{{action.action}}</td>
+      <td class="bedingungskommentar">{{action.comment}}</td>
+      <td class="bedingungscode">{{action.action}}</td>
       <td>
-         <div class="anzeiger" *ngFor="let rule of actions.rules">
+         <label class="anzeiger" *ngFor="let rule of action.rules">
             {{rule.value}}
-         </div>
+         </label>
       </td>
     </tr>
     </table>
+    <br/><br/>
   </div> 
 
 
