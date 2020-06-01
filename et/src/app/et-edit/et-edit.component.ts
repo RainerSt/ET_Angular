@@ -28,7 +28,6 @@ export class ETEditComponent implements OnInit {
   maxActions : boolean = false;
   minRules : boolean = false;
   minActions : boolean = false;
-  sortorderUp = true;
 
   //-Popups
   popoverTitle = 'Lösche ET';
@@ -152,15 +151,13 @@ export class ETEditComponent implements OnInit {
   }
   sortRulesUp() {
     console.log("SortRules et " );
-    let sorter = new ETHelperSort(this.sortorderUp);
-    this.sortorderUp = true
+    let sorter = new ETHelperSort(true);
     sorter.sortETRules(this.et);
     this.setHint("ET wurde erfolgreich aufwärts sortiert", true)
   }
   sortRulesDown() {
     console.log("SortRules et " );
-    let sorter = new ETHelperSort(this.sortorderUp);
-    this.sortorderUp = false
+    let sorter = new ETHelperSort(false);
     sorter.sortETRules(this.et);
     this.setHint("ET wurde erfolgreich abwärts sortiert", true)
   }

@@ -35,7 +35,7 @@ export class ETHelperSort {
       let nextRuleAsString:string  = ""
       for(let i=0; i<et.conditions.length; i++){
         let value = et.conditions[i].rules[ruleNr].value
-        let nextvalue = et.conditions[i].rules[ruleNr].value
+        let nextvalue = et.conditions[i].rules[ruleNr + 1].value
         ruleAsString = ruleAsString + value
         nextRuleAsString = nextRuleAsString + nextvalue
       }
