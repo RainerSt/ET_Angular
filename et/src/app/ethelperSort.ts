@@ -13,24 +13,26 @@ export class ETHelperSort {
   }
 
   sortETRules(et: ET){
+    
     for(let i=0; i<et.conditions.length; i++){
+      let rulescount = et.conditions[0].rules.length
+      console.log ("sortETRules  rulecount: " + rulescount)
       for(let i=0; i<et.conditions.length; i++){
-        for(let j=0; j<et.conditions[0].rules.length - 1; j++){
-           if (this.sortorderUp){
-             if (et.conditions[i].rules[j].value === "n" &&
-                et.conditions[i].rules[j +1].value === "j"){
+        for(let j=0; j < rulescount - 1; j++){
+           let value = et.conditions[i].rules[j].value
+           let nextvalue = et.conditions[i].rules[j +1].value
+             if (! this.isInSortOrder(this.sortorderUp, et, i, j)){
                 this.changePosition(et, j)
-             }
-            } else {
-              if (et.conditions[i].rules[j].value === "j" &&
-              et.conditions[i].rules[j +1].value === "n"){
-              this.changePosition(et, j)
-               } 
              }
           }
       }
     }
   }
+
+  isInSortOrder(sortorderUp:boolean, et:ET, condNr:number, ruleNr:number){
+      return et.bugs.push ("sort to be done...")
+  }
+
   changePosition(et: ET, index: number){
       console.log("changePosition Rule " + index);
       for(let i=0; i<et.conditions.length; i++){

@@ -57,6 +57,7 @@ input.bedingungsanzeiger {
 
 .aktionsanzeigerhl {
     @extend .aktionsanzeiger;
+    width: 3%;
     background-color: rgb(255, 255, 70);
 }
 

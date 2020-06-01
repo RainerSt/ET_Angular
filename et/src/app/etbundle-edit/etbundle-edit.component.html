@@ -1,5 +1,14 @@
 <div>
   <!-- {{etbundle | json}} -->
+  <br/>
+  <div>
+    <button class="btn btn-outline-info" (click)="dismiss()">
+      <img src="assets/logout.svg" class="image24">&nbsp;&nbsp;Abbrechen</button>&nbsp;
+    <button i18n type="submit" class="btn btn-outline-info" (click)="modify()" [disabled]="name.invalid || comment.invalid">
+      <img src="assets/save.svg" class="image24">&nbsp;&nbsp;Speichern</button>
+  </div>
+  <br/>
+
   <div class="form-group">
     <div class="input-group">
 
@@ -34,13 +43,5 @@
   </tab>
 
 </tabs>
-
-
-<div>
-  <button class="btn btn-outline-info" (click)="dismiss()">
-    <img src="assets/logout.svg" class="image24">&nbsp;&nbsp;Abbrechen</button>&nbsp;
-  <button i18n type="submit" class="btn btn-outline-info" (click)="modify()" [disabled]="name.invalid || comment.invalid">
-    <img src="assets/save.svg" class="image24">&nbsp;&nbsp;Speichern</button>
-</div>
 
 <br/><br/><br/><br/><br/>
