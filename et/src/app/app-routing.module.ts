@@ -4,6 +4,7 @@ import {StartComponent} from "./start/start.component";
 import {ETBundleListComponent} from "./etbundle-list/etbundle-list.component";
 import {DefaultComponent} from "./default/default.component";
 import {ETBundleEditComponent} from './etbundle-edit/etbundle-edit.component';
+import {ETBundlePrintComponent} from './etbundle-print/etbundle-print.component';
 import {ETHelpComponent} from './et-help/et-help.component';
 
 
@@ -25,6 +26,10 @@ const routes: Routes = [
   {
     path: 'etbundle/:id',
     component: ETBundleEditComponent
+  },
+  {
+    path: 'etbundlePrint/:id',
+    component: ETBundlePrintComponent
   },
   {   path: 'help',
      component: ETHelpComponent

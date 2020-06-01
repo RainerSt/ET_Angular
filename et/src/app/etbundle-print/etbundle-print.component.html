@@ -1,0 +1,63 @@
+<div>
+  <!-- {{etbundle | json}} -->
+  <br/>
+  <div>
+    <button class="btn btn-outline-info" (click)="dismiss()"
+           title="Zurück zur Übersicht"
+        >
+      <img src="assets/logout.svg" class="image24">&nbsp;&nbsp;Abbrechen</button>&nbsp;
+  </div>
+  <br/>
+
+  <div>
+
+    <p>Project: <b>{{etbundle.project}}</b></p>
+
+    <p>Bundle:<b> {{etbundle.name}}</b></p>
+
+    <p>Comment:</p>
+    <p>{{etbundle.comment}}</p>
+    <br/>
+
+  </div>
+
+  <div  *ngFor="let et of etbundle.ets" tabTitle="{{et.id}} {{et.name}}" >
+    <p>ET: <b>{{et.id}} {{et.name}}</b></p>
+
+    <p>Comment:</p>
+    <p>{{et.comment}}</p>
+    <table>
+       <th>
+          <tr>
+              <td>Condition</td><td>Code</td><td>Rules</td>
+          </tr>
+      </th>
+      <tr *ngFor="let condition of et.conditions">
+        <td>{{condition.comment}}</td>
+        <td>{{condition.condition}}</td>
+        <td>
+           <div class="anzeiger" *ngFor="let rule of condition.rules">
+              {{rule.value}}
+           </div>
+        </td>
+      </tr>
+
+      <th>
+        <tr>
+            <td>Action</td><td>Code</td><td>Rules</td>
+        </tr>
+    </th>
+    <tr *ngFor="let action of et.actions">
+      <td>{{action.comment}}</td>
+      <td>{{action.action}}</td>
+      <td>
+         <div class="anzeiger" *ngFor="let rule of actions.rules">
+            {{rule.value}}
+         </div>
+      </td>
+    </tr>
+    </table>
+  </div> 
+
+
+<br/><br/><br/><br/><br/>

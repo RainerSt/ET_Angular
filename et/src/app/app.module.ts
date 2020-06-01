@@ -9,6 +9,7 @@ import { HttpClientModule} from "@angular/common/http";
 import { FormsModule} from "@angular/forms";
 import { ETBundleNewComponent } from './etbundle-new/etbundle-new.component';
 import { ETBundleEditComponent } from './etbundle-edit/etbundle-edit.component';
+import { ETBundlePrintComponent } from './etbundle-print/etbundle-print.component';
 import { ETEditComponent } from './et-edit/et-edit.component';
 import { Tab, Tabs } from './_templates/Tabs';
 import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
@@ -23,6 +24,7 @@ import { FilterdataPipe } from './filterdata.pipe';
     DefaultComponent,
     ETBundleNewComponent,
     ETBundleEditComponent,
+    ETBundlePrintComponent,
     ETEditComponent,
     Tabs,
     Tab,
