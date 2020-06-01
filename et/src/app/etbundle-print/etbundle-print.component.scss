@@ -13,12 +13,24 @@ $background:white;
 
 .etcomment{
     width: 20%;
-    border: 0;
+    border: 1px solid grey;
     background-color: $background;
 }
+.etcommentHead{
+    width: 20%;
+    border: 1px solid grey;
+    background-color: lightgrey;
+}
+
 
 .etcode{
+    border: 1px solid grey;
     @extend .etcomment;
+}
+.etcodeHead{
+    border: 1px solid grey;
+    background-color: lightgrey;
+    @extend .etcode;
 }
 
 input.bedingungsanzeiger {

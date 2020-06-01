@@ -1,5 +1,4 @@
 <div>
-  <!-- {{etbundle | json}} -->
   <br/>
   <div>
     <button class="btn btn-outline-info" (click)="dismiss()"
@@ -27,13 +26,11 @@
     <p>Comment:</p>
     <p>{{et.comment}}</p>
     <table class="printtable">
-       <th>
-          <tr >
-              <td>Condition</td>
-              <td>Code</td>
-              <td>Rules</td>
-          </tr>
-      </th>
+      <tr >
+        <td class="etcommentHead" >Condition</td>
+        <td class="etcodeHead" >Code</td>
+         <td></td>
+      </tr>
       <tr *ngFor="let condition of et.conditions">
         <td class="bedingungskommentar">{{condition.comment}}</td>
         <td class="bedingungscode">{{condition.condition}}</td>
@@ -44,13 +41,13 @@
         </td>
       </tr>
 
-      <th>
-        <tr>
-            <td>Action</td>
-            <td>Code</td>
-            <td>Rules</td>
-        </tr>
-    </th>
+
+    <tr>
+        <td class="etcommentHead" >Action</td>
+        <td class="etcodeHead" >Code</td>
+        <td></td>
+    </tr>
+
     <tr *ngFor="let action of et.actions">
       <td class="bedingungskommentar">{{action.comment}}</td>
       <td class="bedingungscode">{{action.action}}</td>
