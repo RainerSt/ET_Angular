@@ -22,7 +22,7 @@ import { ETHelperSort } from '../ethelperSort';
 
 export class ETEditComponent implements OnInit {
   @Input() et :ET; 
-  @Output() etDelete = new EventEmitter();
+  @Output() etDeleteEvent = new EventEmitter<ET>();
   public id: number;
   maxRules : boolean = false;
   maxActions : boolean = false;
@@ -278,7 +278,7 @@ export class ETEditComponent implements OnInit {
   deleteET(){
     console.log("delete et " + this.et.name);
     
-      this.etDelete.emit(this.et);
+      this.etDeleteEvent.emit(this.et);
 
   }
 

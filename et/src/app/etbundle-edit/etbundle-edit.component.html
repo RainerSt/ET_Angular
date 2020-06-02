@@ -6,6 +6,7 @@
            title="Zurück zur Übersicht"
         >
       <img src="assets/logout.svg" class="image24">&nbsp;&nbsp;Abbrechen</button>&nbsp;
+
     <button i18n type="submit" class="btn btn-outline-info" (click)="modify()"
            [disabled]="name.invalid || comment.invalid"
            title="Speichert das ET-Bundle">
@@ -36,7 +37,7 @@
 
 <tabs>
   <tab  *ngFor="let et of etbundle.ets" tabTitle="{{et.id}} {{et.name}}" >
-       <app-et-edit [et] = et></app-et-edit>
+       <app-et-edit [et] = et  (etDeleteEvent)="receiveDeleteETMessage($event)"></app-et-edit>
   </tab> 
   <tab tabTitle="+">
     <br/><br/><br/>
