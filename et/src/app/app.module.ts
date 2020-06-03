@@ -15,6 +15,8 @@ import { Tab, Tabs } from './_templates/Tabs';
 import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
 import { ETHelpComponent } from './et-help/et-help.component';
 import { FilterdataPipe } from './filterdata.pipe';
+import { LoginComponent } from './login/login.component';
+import { LogoutComponent } from './logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import { FilterdataPipe } from './filterdata.pipe';
     Tab,
     ETHelpComponent,
     FilterdataPipe,
+    LoginComponent,
+    LogoutComponent,
     
   ],
   imports: [

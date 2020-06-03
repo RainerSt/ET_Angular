@@ -6,6 +6,8 @@ import {DefaultComponent} from "./default/default.component";
 import {ETBundleEditComponent} from './etbundle-edit/etbundle-edit.component';
 import {ETBundlePrintComponent} from './etbundle-print/etbundle-print.component';
 import {ETHelpComponent} from './et-help/et-help.component';
+import {LoginComponent} from './login/login.component';
+import {LogoutComponent} from './logout/logout.component';
 
 
 const routes: Routes = [
@@ -37,6 +39,14 @@ const routes: Routes = [
   {   path: 'help#bundle',
      component: ETHelpComponent
   },
+  {   path: 'login',
+  component: LoginComponent
+  },
+
+  {   path: 'logout',
+  component: LogoutComponent
+  },
+
   {
     path: '**',
     component: DefaultComponent
