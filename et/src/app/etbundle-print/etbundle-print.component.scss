@@ -1,5 +1,5 @@
 $background:white;
-
+$backgroundGray: rgb(228, 228, 228);
 
 
 .anzeiger{
@@ -19,9 +19,8 @@ $background:white;
 .etcommentHead{
     width: 20%;
     border: 1px solid grey;
-    background-color: lightgrey;
+    background-color:  $backgroundGray;
 }
-
 
 .etcode{
     border: 1px solid grey;
@@ -29,7 +28,7 @@ $background:white;
 }
 .etcodeHead{
     border: 1px solid grey;
-    background-color: lightgrey;
+    background-color: $backgroundGray;
     @extend .etcode;
 }
 
@@ -69,5 +68,9 @@ table, td {
     border-collapse: collapse;
 }
 th {
-    background-color: rgb(228, 228, 228);
+    background-color: $backgroundGray;
+}
+
+.backgroundGray{
+    background-color: $backgroundGray;
 }
