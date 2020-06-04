@@ -32,7 +32,9 @@ export class ETBundleListComponent implements OnInit {
   }
   duplicateETBundle(bundle: ETBundle) {
     console.log("duplicate bundle id " + bundle.id)
-    this.etService.createETBundle(bundle)
+    let cloneOfBundle : ETBundle  = { ...bundle}
+    delete cloneOfBundle.id
+    this.etService.createETBundle(cloneOfBundle)
   }
   printETBundle(id: number) {
     console.log("print bundle id " + id)
