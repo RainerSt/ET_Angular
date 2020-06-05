@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-login',
@@ -8,12 +9,13 @@ import { Component, OnInit } from '@angular/core';
 export class LoginComponent implements OnInit {
 
   loggedin:boolean = false
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
   login(){
      this.loggedin = true;
+     this.router.navigate(['/etbundle']);
   }
 }
 
