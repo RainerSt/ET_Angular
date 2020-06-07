@@ -77,7 +77,7 @@
        <!--------------------------------------------------------
           --------------- hinweise              ----------------
           ------------------------------------------------------->
-        <div [hidden]="et.bugs.length > 0">
+        <div [hidden]="et.bugs.length > 0 || hintsClicked" (click)=hideHints()>
           <label [hidden]="hints.length < 1"></label>
           <div *ngFor="let hint of hints; let i = index" class="alert alert-info">
             <label>{{hint}}</label>

@@ -39,6 +39,7 @@ export class ETEditComponent implements OnInit {
 
   visualizedRule:number = -1;
   hints:string[] = [];
+  hintsClicked = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -50,6 +51,9 @@ export class ETEditComponent implements OnInit {
 
   ngOnInit() {
   
+  }
+  hideHints(){
+    this.hintsClicked = true;
   }
   dismiss() {
     this.router.navigate(['/etbundle']);
@@ -307,5 +311,6 @@ export class ETEditComponent implements OnInit {
     } else {
       this.hints.push(hint)
     }
+    this.hintsClicked = false
   }
 }
