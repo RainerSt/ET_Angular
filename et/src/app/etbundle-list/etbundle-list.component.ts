@@ -44,6 +44,10 @@ export class ETBundleListComponent implements OnInit {
     console.log("print bundle id " + id)
     this.router.navigate(['/etbundlePrint', id]);
   }
+  showChangeLog (id: number) {
+    console.log("print bundle id " + id)
+    this.router.navigate(['/etbundleChangelog', id]);
+  }
 
   // life cycle hook
   ngOnInit() {
