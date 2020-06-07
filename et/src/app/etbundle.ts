@@ -5,5 +5,9 @@ export interface ETBundle {
   project: string;
   name: string;
   comment: string;
+  editor: string;
+  status: number;
+  version: string;
   ets:  ET[];
+  changehistory: string[];
 }

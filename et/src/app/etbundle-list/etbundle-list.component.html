@@ -35,6 +35,8 @@
         <th>Project</th>
         <th>Name</th>
         <th>Comment</th>
+        <th>Status</th>
+        <th>Version</th>
         <th></th>
       </tr>
       </thead>
@@ -44,6 +46,14 @@
         <td>{{etbundle.project}}</td>
         <td>{{etbundle.name}}</td>
         <td title="{{etbundle.comment}}">{{etbundle.comment | slice:0:40}}</td>
+        <td [ngSwitch]="etbundle.status">
+          <div *ngSwitchCase="0">Konzeption</div>
+          <div *ngSwitchCase="1">Freigegeben</div>
+          <div *ngSwitchCase="2">In Arbeit</div>
+          <div *ngSwitchCase="3">Archiviert</div>
+          <div *ngSwitchDefault>unbekannt</div>
+        </td>
+        <td>{{etbundle.version}}</td>
         <td>
           <button class="btn btn-outline-danger  btn-sm"
           mwlConfirmationPopover
@@ -63,9 +73,13 @@
     
           &nbsp;
           <button class="btn btn-outline-info  btn-sm" (click)="printETBundle(etbundle.id)">
-               <img src="./assets/printer.svg"  class="image24"></button>
+              <img src="./assets/printer.svg"  class="image24"></button>
             
-        
+          &nbsp;
+          <button class="btn btn-outline-info  btn-sm" (click)="printETBundle(etbundle.id)">
+                <img src="./assets/changelog.svg"  class="image24" title="Änderungshistorie"></button>
+                      
+                       
         </td>
       </tr>
       </tbody>
