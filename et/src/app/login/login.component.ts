@@ -9,11 +9,14 @@ import {Router} from "@angular/router";
 export class LoginComponent implements OnInit {
 
   loggedin:boolean = false
+  name:string = ""
+
   constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
   login(){
+
      this.loggedin = true;
      this.router.navigate(['/etbundle']);
   }

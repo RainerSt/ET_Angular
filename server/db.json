@@ -1041,7 +1041,175 @@
       ]
     },
     {
-      "id": 2,
+      "project": "aaaaa",
+      "name": "bbbbbbbbbbb",
+      "comment": "cccccccccccc",
+      "id": 3,
+      "ets": [
+        {
+          "id": 1,
+          "name": "name of new et",
+          "comment": "comment of new et",
+          "conditions": [
+            {
+              "id": 1,
+              "comment": "new condition comment",
+              "condition": "#BObject_isThatTrue()",
+              "rules": [
+                {
+                  "value": "j",
+                  "fehlerhaft": false
+                },
+                {
+                  "value": "n",
+                  "fehlerhaft": false
+                }
+              ]
+            },
+            {
+              "id": 2,
+              "comment": "asdfasdf",
+              "condition": "",
+              "rules": [
+                {
+                  "value": "-",
+                  "fehlerhaft": false
+                },
+                {
+                  "value": "-",
+                  "fehlerhaft": false
+                }
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "id": 1,
+              "comment": "new action comment",
+              "action": "#AObject_doThat()",
+              "rules": [
+                {
+                  "value": "-"
+                },
+                {
+                  "value": "x"
+                }
+              ]
+            }
+          ],
+          "bugs": []
+        }
+      ]
+    },
+    {
+      "project": "xxxxx",
+      "name": "yyyy",
+      "comment": "zzzzzzzzzzz",
+      "id": 4,
+      "ets": [
+        {
+          "id": 1,
+          "name": "name of new et",
+          "comment": "comment of new et",
+          "conditions": [
+            {
+              "id": 1,
+              "comment": "new condition comment",
+              "condition": "#BObject_isThatTrue()",
+              "rules": [
+                {
+                  "value": "j",
+                  "fehlerhaft": false
+                },
+                {
+                  "value": "n",
+                  "fehlerhaft": false
+                }
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "id": 1,
+              "comment": "new action comment",
+              "action": "#AObject_doThat()",
+              "rules": [
+                {
+                  "value": "-"
+                },
+                {
+                  "value": "x"
+                }
+              ]
+            }
+          ],
+          "bugs": [
+            "Hier werden Fehler angezeigt"
+          ]
+        }
+      ]
+    },
+    {
+      "project": "bbbbbbb",
+      "name": "bbbbbbbbbbbbbbb",
+      "comment": "bbbbbbbbbbbbbbbbb",
+      "id": 6
+    },
+    {
+      "project": "ccccccccccccc",
+      "name": "cccccccccccccc",
+      "comment": "ccccccccccc",
+      "id": 7
+    },
+    {
+      "project": "dddddddddddd",
+      "name": "dddddd",
+      "comment": "dddd",
+      "id": 8
+    },
+    {
+      "project": "eeee",
+      "name": "eeeeeeeeeeeeee",
+      "comment": "eeeeeeeeeeee",
+      "id": 9
+    },
+    {
+      "project": "fffffffff",
+      "name": "ffff",
+      "comment": "ffffffffffffff",
+      "id": 10
+    },
+    {
+      "project": "ggggggggggggg",
+      "name": "ggggggggg",
+      "comment": "gggggggggggggg",
+      "id": 11
+    },
+    {
+      "project": "hhhhhhhhhhhhh",
+      "name": "hhhhhh",
+      "comment": "hhhh",
+      "id": 12
+    },
+    {
+      "project": "zzzzzzz",
+      "name": "zzzzzzzzzz",
+      "comment": "zzzzzzzzzzzzzz\nasfdasdkfjlöasfj asldf\nasflkjasl dfaslfj asldf\nasdflasdj flaksd flasjdfasdjfljkas\nalsdf asdlfjklasdk jfalsdjkflsdjk fasljkf",
+      "id": 13
+    },
+    {
+      "project": "fhdadfhdf",
+      "name": "ahfhah",
+      "comment": "adgasgas",
+      "id": 14
+    },
+    {
+      "project": "agdgadga",
+      "name": "gagsga",
+      "comment": "agag",
+      "id": 15
+    },
+    {
       "project": "Projekt 1",
       "name": "Bundle Nummer 2",
       "comment": "Kommentar Bundle 2 afas ",
@@ -1214,46 +1382,51 @@
             "Hier werden Fehler angezeigt"
           ]
         }
-      ]
+      ],
+      "id": 16
     },
     {
-      "project": "aaaaa",
-      "name": "bbbbbbbbbbb",
-      "comment": "cccccccccccc",
-      "id": 3,
+      "project": "Projekt 1",
+      "name": "Kopie von Bundle Nummer 2",
+      "comment": "Kommentar Bundle 2 afas ",
       "ets": [
         {
           "id": 1,
-          "name": "name of new et",
-          "comment": "comment of new et",
+          "name": "ET Nummer 1 Bundle 2",
+          "comment": "Kommentar ET1 afas ",
           "conditions": [
             {
               "id": 1,
-              "comment": "new condition comment",
-              "condition": "#BObject_isThatTrue()",
+              "comment": "bla 1111 ",
+              "condition": "#B_hasProperty(xxxx)",
               "rules": [
                 {
-                  "value": "j",
-                  "fehlerhaft": false
+                  "value": "j"
                 },
                 {
-                  "value": "n",
-                  "fehlerhaft": false
+                  "value": "n"
+                },
+                {
+                  "value": "n"
                 }
               ]
             },
             {
               "id": 2,
-              "comment": "asdfasdf",
-              "condition": "",
+              "comment": "blub11111",
+              "condition": "#B_isEmpty(xxxx)",
               "rules": [
                 {
-                  "value": "-",
-                  "fehlerhaft": false
+                  "id": 1,
+                  "value": "-"
                 },
                 {
-                  "value": "-",
-                  "fehlerhaft": false
+                  "id": 2,
+                  "value": "j"
+                },
+                {
+                  "id": 3,
+                  "value": "n"
                 }
               ]
             }
@@ -1261,9 +1434,12 @@
           "actions": [
             {
               "id": 1,
-              "comment": "new action comment",
-              "action": "#AObject_doThat()",
+              "comment": "aktion blaaa1111",
+              "action": "#A_doxxxxx(xxxx)",
               "rules": [
+                {
+                  "value": "x"
+                },
                 {
                   "value": "-"
                 },
@@ -1271,35 +1447,75 @@
                   "value": "x"
                 }
               ]
+            },
+            {
+              "id": 2,
+              "comment": "aktion  blub111",
+              "action": "#A_doyyyyyyy(xxxx)",
+              "rules": [
+                {
+                  "value": "-"
+                },
+                {
+                  "value": "x"
+                },
+                {
+                  "value": "x"
+                }
+              ]
+            },
+            {
+              "id": 3,
+              "comment": "ET Nummer 2",
+              "action": "",
+              "rules": [
+                {
+                  "value": "-"
+                },
+                {
+                  "value": "x"
+                },
+                {
+                  "value": "-"
+                }
+              ]
             }
-          ],
-          "bugs": []
-        }
-      ]
-    },
-    {
-      "project": "xxxxx",
-      "name": "yyyy",
-      "comment": "zzzzzzzzzzz",
-      "id": 4,
-      "ets": [
+          ]
+        },
         {
-          "id": 1,
-          "name": "name of new et",
-          "comment": "comment of new et",
+          "id": 2,
+          "name": "ET Nummer 2 Bundle 2",
+          "comment": "Kommentar ET2",
           "conditions": [
             {
               "id": 1,
-              "comment": "new condition comment",
-              "condition": "#BObject_isThatTrue()",
+              "comment": "Das Wetter ist schön",
+              "condition": "#B_isSunshine()",
               "rules": [
                 {
-                  "value": "j",
-                  "fehlerhaft": false
+                  "value": "j"
                 },
                 {
-                  "value": "n",
-                  "fehlerhaft": false
+                  "value": "j"
+                },
+                {
+                  "value": "n"
+                }
+              ]
+            },
+            {
+              "id": 2,
+              "comment": "Ich habe mehr als 2T Urlaub",
+              "condition": "#B_hasVacancy(#B_getDays())",
+              "rules": [
+                {
+                  "value": "j"
+                },
+                {
+                  "value": "n"
+                },
+                {
+                  "value": "-"
                 }
               ]
             }
@@ -1307,113 +1523,43 @@
           "actions": [
             {
               "id": 1,
-              "comment": "new action comment",
-              "action": "#AObject_doThat()",
+              "comment": "in den Garten grillen",
+              "action": "#A_doBarbecue()",
               "rules": [
                 {
                   "value": "-"
                 },
                 {
                   "value": "x"
+                },
+                {
+                  "value": "-"
+                }
+              ]
+            },
+            {
+              "id": 2,
+              "comment": "wegfahren",
+              "action": "#A_doGoOutside()",
+              "rules": [
+                {
+                  "value": "x"
+                },
+                {
+                  "value": "-"
+                },
+                {
+                  "value": "-"
                 }
               ]
             }
           ],
-          "bugs": [
+          "fehler": [
             "Hier werden Fehler angezeigt"
           ]
         }
-      ]
-    },
-    {
-      "project": "aaaaaaaaaaaa",
-      "name": "aaaaaaaaa",
-      "comment": "aaaaaaaaaaaaaaaa",
-      "id": 5
-    },
-    {
-      "project": "bbbbbbb",
-      "name": "bbbbbbbbbbbbbbb",
-      "comment": "bbbbbbbbbbbbbbbbb",
-      "id": 6
-    },
-    {
-      "project": "ccccccccccccc",
-      "name": "cccccccccccccc",
-      "comment": "ccccccccccc",
-      "id": 7
-    },
-    {
-      "project": "dddddddddddd",
-      "name": "dddddd",
-      "comment": "dddd",
-      "id": 8
-    },
-    {
-      "project": "eeee",
-      "name": "eeeeeeeeeeeeee",
-      "comment": "eeeeeeeeeeee",
-      "id": 9
-    },
-    {
-      "project": "fffffffff",
-      "name": "ffff",
-      "comment": "ffffffffffffff",
-      "id": 10
-    },
-    {
-      "project": "ggggggggggggg",
-      "name": "ggggggggg",
-      "comment": "gggggggggggggg",
-      "id": 11
-    },
-    {
-      "project": "hhhhhhhhhhhhh",
-      "name": "hhhhhh",
-      "comment": "hhhh",
-      "id": 12
-    },
-    {
-      "project": "zzzzzzz",
-      "name": "zzzzzzzzzz",
-      "comment": "zzzzzzzzzzzzzz\nasfdasdkfjlöasfj asldf\nasflkjasl dfaslfj asldf\nasdflasdj flaksd flasjdfasdjfljkas\nalsdf asdlfjklasdk jfalsdjkflsdjk fasljkf",
-      "id": 13
-    },
-    {
-      "project": "fhdadfhdf",
-      "name": "ahfhah",
-      "comment": "adgasgas",
-      "id": 14
-    },
-    {
-      "project": "agdgadga",
-      "name": "gagsga",
-      "comment": "agag",
-      "id": 15
-    },
-    {
-      "project": "agdgadga",
-      "name": "gagsga",
-      "comment": "agag",
-      "id": 16
-    },
-    {
-      "project": "agdgadga",
-      "name": "gagsga",
-      "comment": "agag",
+      ],
       "id": 17
-    },
-    {
-      "project": "agdgadga",
-      "name": "gagsga",
-      "comment": "agag",
-      "id": 18
-    },
-    {
-      "project": "agdgadga",
-      "name": "gagsga",
-      "comment": "agag",
-      "id": 19
     }
   ]
 }

@@ -34,6 +34,8 @@ export class ETBundleListComponent implements OnInit {
     console.log("duplicate bundle id " + bundle.id)
     let cloneOfBundle : ETBundle  = { ...bundle}
     delete cloneOfBundle.id
+    cloneOfBundle.name = "Kopie von " + cloneOfBundle.name;
+
     this.etService.createETBundle(cloneOfBundle).subscribe(() => {
       this.getETBundles();
     });
