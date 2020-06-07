@@ -28,6 +28,7 @@ export class ETEditComponent implements OnInit {
   maxActions : boolean = false;
   minRules : boolean = false;
   minActions : boolean = false;
+  
 
   //-Popups
   popoverTitle = 'Lösche ET';
