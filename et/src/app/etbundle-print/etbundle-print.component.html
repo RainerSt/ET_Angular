@@ -9,11 +9,17 @@
   <br/>
 
   <div>
-
-    <p>Project: <b>{{etbundle.project}}</b></p>
-
-    <p>Bundle:<b> {{etbundle.name}}</b></p>
-
+    <table>
+      <tr>
+        <td class="bedingungscode">Project: </td> <td class="bedingungscode"><b>{{etbundle.project}}</b></td>
+        <td class="bedingungscode">Bundle:</td>   <td class="bedingungscode"><b>  {{etbundle.name}}</b></td>
+     </tr>
+     <tr>
+        <td class="bedingungscode">Status: </td> <td class="bedingungscode"><b> {{etbundle.status}}</b> </td> 
+        <td class="bedingungscode">Version:</td> <td class="bedingungscode"><b>{{etbundle.version}}</b> </td>
+         
+     </tr>
+    </table>
     <p>Comment:</p>
     <p>{{etbundle.comment}}</p>
     <br/>

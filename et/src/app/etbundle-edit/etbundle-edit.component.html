@@ -23,6 +23,15 @@
       <input [(ngModel)]="etbundle.name" required minlength="3" maxlength="255" type="text" class="form-control" id="Name" aria-describedby="Name"
             placeholder="name" #name="ngModel"  title="name of et-bundle ">
     </div>
+    <div class="input-group">
+
+      <input [(ngModel)]="etbundle.status" required minlength="3" maxlength="255" type="text" class="form-control" id="Status" aria-describedby="Status"
+            placeholder="status" #status="ngModel" title="status of project">
+
+      <input [(ngModel)]="etbundle.version" required minlength="3" maxlength="255" type="text" class="form-control" id="Version" aria-describedby="Version"
+            placeholder="version" #version="ngModel"  title="version of et-bundle ">
+    </div>
+
       <textarea [(ngModel)]="etbundle.comment" 
                 required class="form-control" 
                 id="Comment" 

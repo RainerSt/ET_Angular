@@ -337,6 +337,96 @@
       "name": "bbbbbbbbbbbbbbb",
       "comment": "bbbbbbbbbbbbbbbbb",
       "id": 6
+    },
+    {
+      "project": "Zzzzzz",
+      "name": "zzzzzzzzz",
+      "comment": "zzzzzzzzzzzzz",
+      "status": "konzept",
+      "version": "1",
+      "id": 7,
+      "ets": [
+        {
+          "id": 1,
+          "name": "name of new et",
+          "comment": "comment of new et",
+          "conditions": [
+            {
+              "id": 1,
+              "comment": "new condition comment",
+              "condition": "#BObject_isThatTrue()",
+              "rules": [
+                {
+                  "value": "j",
+                  "fehlerhaft": false
+                },
+                {
+                  "value": "j",
+                  "fehlerhaft": false
+                },
+                {
+                  "value": "n",
+                  "fehlerhaft": false
+                }
+              ]
+            },
+            {
+              "id": 2,
+              "comment": "asfsd",
+              "condition": "",
+              "rules": [
+                {
+                  "value": "j",
+                  "fehlerhaft": false
+                },
+                {
+                  "value": "n",
+                  "fehlerhaft": false
+                },
+                {
+                  "value": "-",
+                  "fehlerhaft": false
+                }
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "id": 1,
+              "comment": "new action comment",
+              "action": "#AObject_doThat()",
+              "rules": [
+                {
+                  "value": "-"
+                },
+                {
+                  "value": "x"
+                },
+                {
+                  "value": "x"
+                }
+              ]
+            },
+            {
+              "id": 2,
+              "comment": "asdfas",
+              "action": "",
+              "rules": [
+                {
+                  "value": "x"
+                },
+                {
+                  "value": "x"
+                },
+                {
+                  "value": "-"
+                }
+              ]
+            }
+          ],
+          "bugs": []
+        }
+      ]
     }
   ]
 }

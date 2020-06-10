@@ -46,13 +46,16 @@
         <td>{{etbundle.project}}</td>
         <td>{{etbundle.name}}</td>
         <td title="{{etbundle.comment}}">{{etbundle.comment | slice:0:40}}</td>
-        <td [ngSwitch]="etbundle.status">
+        <td>{{etbundle.status}}</td>
+<!--  
+       <td [ngSwitch]="etbundle.status">
           <div *ngSwitchCase="0">Konzeption</div>
           <div *ngSwitchCase="1">Freigegeben</div>
           <div *ngSwitchCase="2">In Arbeit</div>
           <div *ngSwitchCase="3">Archiviert</div>
           <div *ngSwitchDefault>unbekannt</div>
         </td>
+--> 
         <td>{{etbundle.version}}</td>
         <td>
           <button class="btn btn-outline-danger  btn-sm"

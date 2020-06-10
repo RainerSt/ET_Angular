@@ -16,7 +16,18 @@
   <div class="form-group">
     <label for="Comment">Comment</label>
     <input [(ngModel)]="etbundle.comment"  required minlength="3" maxlength="255" type="text" class="form-control" id="Comment" aria-describedby="Comment"
-    placeholder="comment" #name="ngModel">
+    placeholder="comment" #comment="ngModel">
+  </div>
+
+  <div class="form-group">
+    <label for="Status">Status</label>
+    <input [(ngModel)]="etbundle.status"  required minlength="3" maxlength="255" type="text" class="form-control" id="Status" aria-describedby="Status"
+    placeholder="status" #status="ngModel">
+  </div>
+  <div class="form-group">
+    <label for="Version">Version</label>
+    <input [(ngModel)]="etbundle.version"  required minlength="3" maxlength="255" type="text" class="form-control" id="Version" aria-describedby="Version"
+    placeholder="version" #version="ngModel">
   </div>
 
   <button class="btn btn-outline-info" (click)="dismiss()">
