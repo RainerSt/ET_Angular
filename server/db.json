@@ -284,7 +284,9 @@
           ],
           "bugs": []
         }
-      ]
+      ],
+      "version": "111",
+      "status": "produktiv"
     },
     {
       "project": "xxxxx",
@@ -330,13 +332,17 @@
           ],
           "bugs": []
         }
-      ]
+      ],
+      "version": "2.0",
+      "status": "in Arbeit"
     },
     {
       "project": "bbbbbbb",
       "name": "bbbbbbbbbbbbbbb",
       "comment": "bbbbbbbbbbbbbbbbb",
-      "id": 6
+      "id": 6,
+      "version": "11",
+      "status": "archiviert"
     },
     {
       "project": "Zzzzzz",
