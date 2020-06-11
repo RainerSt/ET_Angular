@@ -31,7 +31,14 @@ $backgroundGray: rgb(228, 228, 228);
     background-color: $backgroundGray;
     @extend .etcode;
 }
-
+.etformat{
+    border: 0px;
+    @extend .etcomment;
+}
+.etformattable{
+    border: 0px;
+    width: 80%;;
+}
 input.bedingungsanzeiger {
     @extend .anzeiger;
     
