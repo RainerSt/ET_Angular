@@ -19,11 +19,18 @@
     placeholder="comment" #comment="ngModel">
   </div>
 
-  <div class="form-group">
-    <label for="Status">Status</label>
-    <input [(ngModel)]="etbundle.status"  required minlength="3" maxlength="255" type="text" class="form-control" id="Status" aria-describedby="Status"
-    placeholder="status" #status="ngModel">
-  </div>
+  <select [(ngModel)]="etbundle.status" 
+     class="form-control" id="Status"
+  >
+     <option>Konzeption</option>
+     <option>in Prüfung</option>
+     <option>freigegeben</option>
+     <option>zurückgestellt</option>
+     <option>verworfen</option>
+     <option>archiviert</option>
+</select>   
+
+
   <div class="form-group">
     <label for="Version">Version</label>
     <input [(ngModel)]="etbundle.version"  required minlength="3" maxlength="255" type="text" class="form-control" id="Version" aria-describedby="Version"

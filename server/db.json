@@ -286,7 +286,7 @@
         }
       ],
       "version": "111",
-      "status": "produktiv"
+      "status": "Konzeption"
     },
     {
       "project": "xxxxx",
@@ -334,7 +334,7 @@
         }
       ],
       "version": "2.0",
-      "status": "in Arbeit"
+      "status": "in Prüfung"
     },
     {
       "project": "bbbbbbb",
@@ -348,7 +348,7 @@
       "project": "Zzzzzz",
       "name": "zzzzzzzzz",
       "comment": "zzzzzzzzzzzzz",
-      "status": "konzept",
+      "status": "Konzeption",
       "version": "1",
       "id": 7,
       "ets": [
