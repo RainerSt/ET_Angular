@@ -57,12 +57,12 @@ input.bedingungsanzeiger {
     @extend .anzeiger;
 }
 .aktionsanzeigerWide {
-    width: 3%;
+    width: 4%;
     @extend .anzeiger;
 }
 .aktionsanzeigerhl {
     @extend .aktionsanzeiger;
-    width: 3%;
+    width: 4%;
     background-color: rgb(255, 255, 70);
 }
 
