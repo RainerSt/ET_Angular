@@ -22,12 +22,8 @@
   <select [(ngModel)]="etbundle.status" 
      class="form-control" id="Status"
   >
-     <option>Konzeption</option>
-     <option>in Prüfung</option>
-     <option>freigegeben</option>
-     <option>zurückgestellt</option>
-     <option>verworfen</option>
-     <option>archiviert</option>
+    <option *ngFor="let status of etService.getBundleStatus()">{{status}}</option>
+ 
 </select>   
 
 

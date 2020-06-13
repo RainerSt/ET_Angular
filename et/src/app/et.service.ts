@@ -95,28 +95,16 @@ export class ETService {
   
   }
 
-  collapseET(et: ET){
-    console.log("Service collapse et " + et.name);
-     et.conditions.forEach(function (value) {
-      console.log(value);
-    }); 
+  getBundleStatus(){
+    let status=[
+      "Konzeption",
+      "in Prüfung",
+      "freigegeben",
+      "zurückgestellt",
+      "verworfen",
+      "archiviert"]
+    return status
   }
+ 
 
-  expandET(et: ET){
-    console.log("Service expand et " + et.name);
-    let neueBedingungen: BedingungsAnzeiger[];
-    let neueAktionen:    AktionsAnzeiger[];
-
-    for(let i=0; i<et.conditions.length; i++){
-      console.log(et.conditions[i].comment);
-      for(let j=0; j < et.conditions[i].rules.length; j++){
-        console.log(et.conditions[i].rules[j].value);
-        if (et.conditions[i].rules[j].value == "-"){
-          console.log("muss expandiert werden");
-        } else {
-          console.log("direktübernehmen");
-        }
-      }
-    }
-  }
 }

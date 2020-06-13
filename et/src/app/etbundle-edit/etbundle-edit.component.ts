@@ -4,7 +4,6 @@ import {ETService} from "../et.service";
 import {ETBundle} from "../etbundle";
 import { ET } from '../et';
 
-
 @Component({
   selector: 'app-etbundle-edit',
   templateUrl: './etbundle-edit.component.html',
@@ -13,11 +12,13 @@ import { ET } from '../et';
 export class ETBundleEditComponent implements OnInit {
   public id: number;
   public etbundle: ETBundle;
+
   
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private etService: ETService
+    public etService: ETService,
+
   ) {
   }
 
@@ -59,4 +60,5 @@ export class ETBundleEditComponent implements OnInit {
     }
     this.modifyAndReload()
   }
+  
 }

@@ -13,7 +13,7 @@ export class ETBundleNewComponent implements OnInit {
 
   public etbundle: ETBundle = {} as ETBundle;
 
-  constructor(private etService: ETService) {
+  constructor(public etService: ETService) {
   }
 
   ngOnInit() {
