@@ -1,0 +1,24 @@
+<ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Hilfe zur ET</h4>
+     </div>
+    <ul>
+        <li>Rechtsklick auf Regelauswahl hebt diese hervor<br></li>
+        <li>Rechtsklick auf Bedingungsauswahl wechselt zwischen 'J,N,-'<br></li>
+        <li>Rechtsklick auf Aktionsauswahl wechselt zwischen 'X,-'</li>
+        <li>Linksklick auf Regelauswahl zeigt die Optionen</li>
+        <ul>
+            <li>'+' dupliziert die selektierte Regel</li>
+            <li>'-' löscht die selektierte Regel</li>
+            <li>'>' expandiert die selektierte Regel</li>
+            <li>'<' verdichtet die selektierte Regel</li>
+        </ul>
+    </ul>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="modal.close('OK click')">OK</button>
+    </div>
+  </ng-template>
+  
+    <button   (click)="open(content)" class="btn btn-outline-info btn-sm"
+    ><img src="assets/help.svg" class="image24"></button>
+  <hr>
