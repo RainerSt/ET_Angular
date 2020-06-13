@@ -7,7 +7,7 @@ $error:rgb(255, 181, 197);
 }
 
 .anzeiger{
-    width: 1.5%;
+    width: 1.7%;
     border: 0;
     text-align: center;
     text-align-last:center;
@@ -57,12 +57,12 @@ input.bedingungsanzeiger {
     @extend .anzeiger;
 }
 .aktionsanzeigerWide {
-    width: 4%;
+    width: 3.5%;
     @extend .anzeiger;
 }
 .aktionsanzeigerhl {
     @extend .aktionsanzeiger;
-    width: 4%;
+    width: 3.5%;
     background-color: rgb(255, 255, 70);
 }
 
