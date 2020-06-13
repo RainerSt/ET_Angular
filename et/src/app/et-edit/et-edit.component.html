@@ -99,7 +99,8 @@
                    [hidden]="et.conditions[0].rules.length > 32"
                    [class]="{
                     'aktionsanzeigerhl': visualizedRule == i,
-                    'aktionsanzeiger': visualizedRule != i
+                    'aktionsanzeiger': visualizedRule != i && et.conditions[0].rules.length > 16,
+                    'aktionsanzeigerWide': visualizedRule != i && et.conditions[0].rules.length < 17
                    }"
                    (click)="actionOnRule(i, '*')"
                    (contextmenu)="onRightClick(i)"
@@ -128,7 +129,8 @@
                  *ngFor="let rule of condition.rules; let i = index"
                  [class]="{
                   'aktionsanzeigerhl': visualizedRule == i,
-                  'aktionsanzeiger': visualizedRule != i
+                  'aktionsanzeiger': visualizedRule != i   && et.conditions[0].rules.length > 16,
+                  'aktionsanzeigerWide': visualizedRule != i  && et.conditions[0].rules.length < 17
                  }"
                  (contextmenu)="toggleConditionValue(rule)"
                  >
@@ -164,7 +166,8 @@
                   class="aktionsanzeiger"
                   [class]="{
                         'aktionsanzeigerhl': visualizedRule == i,
-                        'aktionsanzeiger': visualizedRule != i
+                        'aktionsanzeiger': visualizedRule != i  && et.conditions[0].rules.length > 16,
+                        'aktionsanzeigerWide': visualizedRule != i  && et.conditions[0].rules.length < 17
                        }"
                  (contextmenu)="toggleActionValue(rule)"
 

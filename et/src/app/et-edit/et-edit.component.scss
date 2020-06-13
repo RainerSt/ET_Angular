@@ -43,9 +43,7 @@ input.bedingungsanzeiger {
     @extend .anzeiger;
     
 }
-.aktionsanzeiger {
-    @extend .anzeiger;
-}
+
 .aktionsanzeigerhead {
     @extend .anzeiger;
     background-color: white;
@@ -55,6 +53,13 @@ input.bedingungsanzeiger {
     background-color: $focusbackground;
 }
 
+.aktionsanzeiger {
+    @extend .anzeiger;
+}
+.aktionsanzeigerWide {
+    width: 3%;
+    @extend .anzeiger;
+}
 .aktionsanzeigerhl {
     @extend .aktionsanzeiger;
     width: 3%;
