@@ -1,0 +1,15 @@
+<ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Java-Code</h4>
+     </div>
+    <ul>
+        <li>Hier steht der generierte Java-Code<br></li>
+    </ul>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="modal.close('OK click')">OK</button>
+    </div>
+  </ng-template>
+  
+  <button   (click)="open(content)" class="btn btn-outline-info btn-sm"
+    ><img src="assets/java.svg" class="image24"></button>
+

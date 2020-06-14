@@ -19,6 +19,7 @@ import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import { ChangelogComponent } from './changelog/changelog.component';
 import { EtHelpDialogComponent } from './et-help-dialog/et-help-dialog.component';
+import { EtJavaDialogComponent } from './et-java-dialog/et-java-dialog.component';
 
 
 
@@ -40,6 +41,7 @@ import { EtHelpDialogComponent } from './et-help-dialog/et-help-dialog.component
     LogoutComponent,
     ChangelogComponent,
     EtHelpDialogComponent,
+    EtJavaDialogComponent
 
   ],
   imports: [

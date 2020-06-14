@@ -34,15 +34,7 @@
             <img src="assets/check.svg" class="image24"  title="Prüfe Korrektheit"></Button>&nbsp;&nbsp;
 
             
-          <Button  class="btn btn-outline-info btn-sm"
-          
-                  mwlConfirmationPopover
-                  [popoverTitle]="javaTitle"
-                  [popoverMessage]="java()"
-                  placement="left"
-                  (confirm)="java()"
-                  (cancel)="cancelClicked = true">
-                  <img src="assets/java.svg" class="image24"></Button>&nbsp;&nbsp;
+            <app-et-java-dialog></app-et-java-dialog>&nbsp;&nbsp;
 
           <Button (click)="jscipt()"  class="btn btn-outline-info btn-sm">
             <img src="assets/javascript.svg" class="image24"></Button>&nbsp;&nbsp;
@@ -62,7 +54,8 @@
           &nbsp;
 
         
-        <app-et-help-dialog></app-et-help-dialog>
+          <app-et-help-dialog></app-et-help-dialog>
+          
 
         </div>
         <!--------------------------------------------------------
