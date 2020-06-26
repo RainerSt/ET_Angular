@@ -6,12 +6,14 @@ import {ETBundle} from "./etbundle";
 import {BedingungsAnzeiger} from "./bedingungsAnzeiger";
 import {AktionsAnzeiger} from "./aktionsAnzeiger";
 import {HttpClient} from "@angular/common/http";
-import { Action } from 'rxjs/internal/scheduler/Action';
+import { User } from './user';
+import { Change } from './change';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ETService {
+  private user:User;
   constructor(private http: HttpClient) {
   }
   createNewETinBundle(etbundle: ETBundle) {
@@ -72,6 +74,7 @@ export class ETService {
 
   createETBundle(etbundle: ETBundle) {
     console.log("create Bundle: " + etbundle)
+    this.addChangelog(etbundle)
     let rc = this.http.post('http://localhost:3000/etbundles', etbundle)
     console.log("create Bundle rc: " + rc)
     return rc;
@@ -88,8 +91,19 @@ export class ETService {
   updateETBundle(etbundle: ETBundle) {
     let newVersion = Number(etbundle.version) + 1
     etbundle.version = newVersion.toString();
+    this.addChangelog(etbundle)
     return this.http.put('http://localhost:3000/etbundles/' + etbundle.id, etbundle);
   }
+
+  addChangelog(etbundle: ETBundle){
+    if (etbundle.changehistory === undefined){
+      etbundle.changehistory = new Array
+    }
+    etbundle.changehistory.push(
+      new Change(this.getUser().userId, new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString())
+    )
+  }
+
 
   checkET(et: ET){
   
@@ -108,5 +122,10 @@ export class ETService {
     return status
   }
  
+
+  getUser(){
+    this.user = new User();  //defaultUser, replaced by Login-User
+    return this.user;
+  }
 
 }

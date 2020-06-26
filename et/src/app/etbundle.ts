@@ -1,4 +1,5 @@
 import {ET} from "./et";
+import {Change} from "./change";
 
 export interface ETBundle {
   id: number;
@@ -9,5 +10,6 @@ export interface ETBundle {
   status: number;
   version: string;
   ets:  ET[];
-  changehistory: string[];
+  changehistory: Change[];
+
 }
