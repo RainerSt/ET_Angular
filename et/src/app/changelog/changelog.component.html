@@ -1,1 +1,28 @@
-<p>changelog works!</p>
+<div>
+    <br/>
+    <div>
+      <button class="btn btn-outline-info" (click)="dismiss()"
+             title="Zurück zur Übersicht"
+          >
+        <img src="assets/logout.svg" class="image24">&nbsp;&nbsp;Übersicht</button>&nbsp;
+    </div>
+    <br/>
+
+    <table class="table table-striped mt-4">
+        <thead>
+        <tr>
+            <th>User</th>
+            <th>Version</th>
+            <th>Datum / Uhrzeit</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let change of etbundle.changehistory">
+                <td>{{change.userId}}</td>
+                <td>{{change.version}}</td>
+                <td>{{change.timestamp}}</td>
+            </tr>
+        </tbody>
+        
+    </table>
+</div>

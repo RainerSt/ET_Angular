@@ -2,9 +2,9 @@
   "etbundles": [
     {
       "id": 1,
-      "project": "Projekt 1",
-      "name": "Bundle Nummer 2",
-      "comment": "Kommentar Bundle 1 afas ",
+      "project": "Projekt 1xxxxxxxxxxxxxxxxxxxxxxxx",
+      "name": "Bundle Nummer 2xxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "comment": "Kommentar Bundle 1 afas xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
       "ets": [
         {
           "id": 2,
@@ -101,8 +101,15 @@
           "bugs": []
         }
       ],
-      "version": "1114",
-      "status": "Konzeption"
+      "version": "1115",
+      "status": "Konzeption",
+      "changehistory": [
+        {
+          "userId": "unknown",
+          "version": "1115",
+          "timestamp": "26.6.2020 22:12:32"
+        }
+      ]
     },
     {
       "project": "xxxxx",
@@ -165,7 +172,7 @@
       "name": "zzzzzzzzz",
       "comment": "zzzzzzzzzzzzz",
       "status": "Konzeption",
-      "version": "4",
+      "version": "8",
       "id": 7,
       "ets": [
         {
@@ -247,6 +254,28 @@
             }
           ],
           "bugs": []
+        }
+      ],
+      "changehistory": [
+        {
+          "userId": "unknown",
+          "version": "5",
+          "timestamp": "26.6.2020 22:10:24"
+        },
+        {
+          "userId": "unknown",
+          "version": "6",
+          "timestamp": "26.6.2020 22:10:33"
+        },
+        {
+          "userId": "unknown",
+          "version": "7",
+          "timestamp": "26.6.2020 22:10:36"
+        },
+        {
+          "userId": "unknown",
+          "version": "8",
+          "timestamp": "26.6.2020 22:10:39"
         }
       ]
     }

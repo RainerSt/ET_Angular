@@ -100,7 +100,9 @@ export class ETService {
       etbundle.changehistory = new Array
     }
     etbundle.changehistory.push(
-      new Change(this.getUser().userId, new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString())
+      new Change(this.getUser().userId, 
+                 etbundle.version, 
+                 new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString())
     )
   }
 
