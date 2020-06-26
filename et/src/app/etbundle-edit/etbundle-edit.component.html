@@ -10,7 +10,12 @@
     <button i18n type="submit" class="btn btn-outline-info" (click)="modify()"
            [disabled]="name.invalid || comment.invalid"
            title="Speichert das ET-Bundle">
-      <img src="assets/save.svg" class="image24">&nbsp;&nbsp;Speichern</button>
+      <img src="assets/save.svg" class="image24">&nbsp;&nbsp;Speichern</button>&nbsp;
+
+      <button class="btn btn-outline-info" (click)="dismiss()"
+           title="Generiert Testfälle" >
+      <img src="assets/testcase.svg" class="image24">&nbsp;&nbsp;Testfälle</button>&nbsp;
+
   </div>
   <br/>
 

@@ -86,6 +86,8 @@ export class ETService {
     return this.http.get<ETBundle>('http://localhost:3000/etbundles/' + id);
   }
   updateETBundle(etbundle: ETBundle) {
+    let newVersion = Number(etbundle.version) + 1
+    etbundle.version = newVersion.toString();
     return this.http.put('http://localhost:3000/etbundles/' + etbundle.id, etbundle);
   }
 

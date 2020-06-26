@@ -21,18 +21,6 @@
                   "fehlerhaft": false
                 },
                 {
-                  "value": "j",
-                  "fehlerhaft": false
-                },
-                {
-                  "value": "j",
-                  "fehlerhaft": false
-                },
-                {
-                  "value": "j",
-                  "fehlerhaft": false
-                },
-                {
                   "value": "n",
                   "fehlerhaft": false
                 },
@@ -48,19 +36,7 @@
               "condition": "",
               "rules": [
                 {
-                  "value": "j",
-                  "fehlerhaft": false
-                },
-                {
-                  "value": "j",
-                  "fehlerhaft": false
-                },
-                {
-                  "value": "n",
-                  "fehlerhaft": false
-                },
-                {
-                  "value": "n",
+                  "value": "-",
                   "fehlerhaft": false
                 },
                 {
@@ -69,99 +45,6 @@
                 },
                 {
                   "value": "n",
-                  "fehlerhaft": false
-                }
-              ]
-            },
-            {
-              "id": 3,
-              "comment": "sfasdfas",
-              "condition": "",
-              "rules": [
-                {
-                  "value": "-",
-                  "fehlerhaft": false
-                },
-                {
-                  "value": "n",
-                  "fehlerhaft": false
-                },
-                {
-                  "value": "-",
-                  "fehlerhaft": false
-                },
-                {
-                  "value": "n",
-                  "fehlerhaft": false
-                },
-                {
-                  "value": "-",
-                  "fehlerhaft": false
-                },
-                {
-                  "value": "-",
-                  "fehlerhaft": false
-                }
-              ]
-            },
-            {
-              "id": 4,
-              "comment": "fasdfasfas",
-              "condition": "",
-              "rules": [
-                {
-                  "value": "j",
-                  "fehlerhaft": false
-                },
-                {
-                  "value": "j",
-                  "fehlerhaft": false
-                },
-                {
-                  "value": "-",
-                  "fehlerhaft": false
-                },
-                {
-                  "value": "n",
-                  "fehlerhaft": false
-                },
-                {
-                  "value": "-",
-                  "fehlerhaft": false
-                },
-                {
-                  "value": "-",
-                  "fehlerhaft": false
-                }
-              ]
-            },
-            {
-              "id": 5,
-              "comment": "dfasdfasdfsadfasdasf",
-              "condition": "",
-              "rules": [
-                {
-                  "value": "j",
-                  "fehlerhaft": false
-                },
-                {
-                  "value": "n",
-                  "fehlerhaft": false
-                },
-                {
-                  "value": "-",
-                  "fehlerhaft": false
-                },
-                {
-                  "value": "-",
-                  "fehlerhaft": false
-                },
-                {
-                  "value": "-",
-                  "fehlerhaft": false
-                },
-                {
-                  "value": "-",
                   "fehlerhaft": false
                 }
               ]
@@ -173,15 +56,6 @@
               "comment": "new action comment",
               "action": "#AObject_doThat()",
               "rules": [
-                {
-                  "value": "-"
-                },
-                {
-                  "value": "x"
-                },
-                {
-                  "value": "-"
-                },
                 {
                   "value": "-"
                 },
@@ -202,15 +76,6 @@
                   "value": "x"
                 },
                 {
-                  "value": "x"
-                },
-                {
-                  "value": "x"
-                },
-                {
-                  "value": "x"
-                },
-                {
                   "value": "-"
                 },
                 {
@@ -223,15 +88,6 @@
               "comment": "bbbasdfasd",
               "action": "",
               "rules": [
-                {
-                  "value": "-"
-                },
-                {
-                  "value": "-"
-                },
-                {
-                  "value": "-"
-                },
                 {
                   "value": "-"
                 },
@@ -261,6 +117,37 @@
                   "fehlerhaft": false
                 },
                 {
+                  "value": "j",
+                  "fehlerhaft": false
+                },
+                {
+                  "value": "n",
+                  "fehlerhaft": false
+                },
+                {
+                  "value": "n",
+                  "fehlerhaft": false
+                }
+              ]
+            },
+            {
+              "id": 2,
+              "comment": "",
+              "condition": "",
+              "rules": [
+                {
+                  "value": "j",
+                  "fehlerhaft": false
+                },
+                {
+                  "value": "n",
+                  "fehlerhaft": false
+                },
+                {
+                  "value": "j",
+                  "fehlerhaft": false
+                },
+                {
                   "value": "n",
                   "fehlerhaft": false
                 }
@@ -277,7 +164,32 @@
                   "value": "-"
                 },
                 {
+                  "value": "-"
+                },
+                {
                   "value": "x"
+                },
+                {
+                  "value": "x"
+                }
+              ]
+            },
+            {
+              "id": 2,
+              "comment": "",
+              "action": "",
+              "rules": [
+                {
+                  "value": "-"
+                },
+                {
+                  "value": "x"
+                },
+                {
+                  "value": "-"
+                },
+                {
+                  "value": "-"
                 }
               ]
             }
@@ -285,7 +197,7 @@
           "bugs": []
         }
       ],
-      "version": "111",
+      "version": "1112",
       "status": "Konzeption"
     },
     {
@@ -333,7 +245,7 @@
           "bugs": []
         }
       ],
-      "version": "2.0",
+      "version": "5",
       "status": "in Prüfung"
     },
     {
@@ -349,7 +261,7 @@
       "name": "zzzzzzzzz",
       "comment": "zzzzzzzzzzzzz",
       "status": "Konzeption",
-      "version": "1",
+      "version": "2",
       "id": 7,
       "ets": [
         {
