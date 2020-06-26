@@ -9,6 +9,7 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 export class EtJavaDialogComponent{
 
   closeResult = '';
+  javacode = 'hier steht der Javacode';
 
   constructor(private modalService: NgbModal) {}
 

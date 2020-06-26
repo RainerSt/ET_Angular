@@ -2,9 +2,16 @@
     <div class="modal-header">
       <h4 class="modal-title" id="modal-basic-title">Java-Code</h4>
      </div>
-    <ul>
-        <li>Hier steht der generierte Java-Code<br></li>
-    </ul>
+
+    <textarea [(ngModel)]="javacode" 
+                required class="form-control" 
+                id="Java" 
+                aria-describedby="Java"
+                placeholder="Java" #comment="ngModel" 
+                rows="20"
+                title="Java Code">
+     </textarea>
+
     <div class="modal-footer">
       <button type="button" class="btn btn-outline-dark" (click)="modal.close('OK click')">OK</button>
     </div>

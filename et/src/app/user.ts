@@ -7,6 +7,9 @@ export class User implements IUser{
   secret: string = "";
   role: string  = "guest";
 
+  constructor(userid: string){
+     this.userId = userid
+  }
 
   isGuest(){
     return this.role === "guest";

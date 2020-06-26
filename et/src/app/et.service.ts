@@ -126,8 +126,14 @@ export class ETService {
  
 
   getUser(){
-    this.user = new User();  //defaultUser, replaced by Login-User
+    if (this.user === undefined){
+      this.user = new User("unnkown");  //defaultUser, replaced by Login-User
+    }
+   
     return this.user;
   }
 
+  setUser(user: User){
+    this.user = user
+  }
 }

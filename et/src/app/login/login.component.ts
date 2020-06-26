@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
+import {ETService} from "../et.service";
+import { User } from '../user';
 
 @Component({
   selector: 'app-login',
@@ -9,9 +11,10 @@ import {Router} from "@angular/router";
 export class LoginComponent implements OnInit {
 
   loggedin:boolean = false
-  name:string = ""
+  userid:string = "unknown"
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, 
+              private etService: ETService,) { }
 
   ngOnInit(): void {
   }
@@ -19,6 +22,7 @@ export class LoginComponent implements OnInit {
 
      this.loggedin = true;
      this.router.navigate(['/etbundle']);
+     this.etService.setUser( new User(this.userid))
   }
 }
 
