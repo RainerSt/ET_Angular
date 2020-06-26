@@ -7,102 +7,6 @@
       "comment": "Kommentar Bundle 1 afas ",
       "ets": [
         {
-          "id": 3,
-          "name": "ET Wie gehts",
-          "comment": "blaaaaaa",
-          "conditions": [
-            {
-              "id": 1,
-              "comment": "new condition comment",
-              "condition": "#BObject_isThatTrue()",
-              "rules": [
-                {
-                  "value": "j",
-                  "fehlerhaft": false
-                },
-                {
-                  "value": "n",
-                  "fehlerhaft": false
-                },
-                {
-                  "value": "n",
-                  "fehlerhaft": false
-                }
-              ]
-            },
-            {
-              "id": 2,
-              "comment": "asdfasdfa",
-              "condition": "",
-              "rules": [
-                {
-                  "value": "-",
-                  "fehlerhaft": false
-                },
-                {
-                  "value": "j",
-                  "fehlerhaft": false
-                },
-                {
-                  "value": "n",
-                  "fehlerhaft": false
-                }
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "id": 1,
-              "comment": "new action comment",
-              "action": "#AObject_doThat()",
-              "rules": [
-                {
-                  "value": "-"
-                },
-                {
-                  "value": "x"
-                },
-                {
-                  "value": "x"
-                }
-              ]
-            },
-            {
-              "id": 2,
-              "comment": "aaasdfasd",
-              "action": "",
-              "rules": [
-                {
-                  "value": "x"
-                },
-                {
-                  "value": "-"
-                },
-                {
-                  "value": "-"
-                }
-              ]
-            },
-            {
-              "id": 3,
-              "comment": "bbbasdfasd",
-              "action": "",
-              "rules": [
-                {
-                  "value": "-"
-                },
-                {
-                  "value": "-"
-                },
-                {
-                  "value": "x"
-                }
-              ]
-            }
-          ],
-          "bugs": []
-        },
-        {
           "id": 2,
           "name": "name of new et",
           "comment": "comment of new et",
@@ -197,7 +101,7 @@
           "bugs": []
         }
       ],
-      "version": "1112",
+      "version": "1114",
       "status": "Konzeption"
     },
     {
@@ -261,7 +165,7 @@
       "name": "zzzzzzzzz",
       "comment": "zzzzzzzzzzzzz",
       "status": "Konzeption",
-      "version": "2",
+      "version": "4",
       "id": 7,
       "ets": [
         {

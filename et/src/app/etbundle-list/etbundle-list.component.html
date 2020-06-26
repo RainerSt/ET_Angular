@@ -67,24 +67,33 @@
                 placement="left"
                 (confirm)="deleteETBundle(etbundle.id)"
                 (cancel)="cancelClicked = true"
-                 ><img src="./assets/trash.svg" class="image24" ></button>
+                 ><img src="./assets/trash.svg" class="image24" title="Löschen"></button>
           &nbsp;
-          <button class="btn btn-outline-info  btn-sm" (click)="editETBundle(etbundle.id)">
-              <img src="./assets/workon.svg"  class="image24"></button>
+          <button class="btn btn-outline-info  btn-sm" (click)="editETBundle(etbundle.id)"
+               >
+              <img src="./assets/workon.svg"  class="image24" title="Bearbeiten"></button>
 
           &nbsp;
-          <button class="btn btn-outline-info  btn-sm" (click)="duplicateETBundle(etbundle)">
-               <img src="./assets/duplicate.svg"  class="image24"></button>
+          <button class="btn btn-outline-info  btn-sm" (click)="duplicateETBundle(etbundle)"
+               >
+               <img src="./assets/duplicate.svg"  class="image24" title="Duplizieren"></button>
     
           &nbsp;
-          <button class="btn btn-outline-info  btn-sm" (click)="printETBundle(etbundle.id)">
-              <img src="./assets/printer.svg"  class="image24"></button>
+          <button class="btn btn-outline-info  btn-sm" (click)="printETBundle(etbundle.id)"
+              >
+              <img src="./assets/printer.svg"  class="image24" title="Drucken"></button>
             
           &nbsp;
-          <button class="btn btn-outline-info  btn-sm" (click)="showChangeLog(etbundle.id)">
+          <button class="btn btn-outline-info  btn-sm" (click)="showChangeLog(etbundle.id)"
+                >
                 <img src="./assets/changelog.svg"  class="image24" title="Änderungshistorie"></button>
                       
-                       
+          &nbsp;
+          <button class="btn btn-outline-info  btn-sm" (click)="showTestcases(etbundle.id)"
+               >
+               <img src="./assets/testcase.svg"  class="image24" title="Testfälle"></button>
+                      
+                             
         </td>
       </tr>
       </tbody>
