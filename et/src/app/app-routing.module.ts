@@ -35,6 +35,10 @@ const routes: Routes = [
     component: ETBundlePrintComponent
   },
   {
+    path: 'etbundleTestcases/:id',
+    component: ETBundlePrintComponent
+  },
+  {
     path: 'etbundleChangelog/:id',
     component: ChangelogComponent
   },
