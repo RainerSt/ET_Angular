@@ -5,7 +5,7 @@ export class User implements IUser{
   userId: string = "unknown";
   name: string = "unknown";
   secret: string = "";
-  role: string  = "guest";
+  role: string  = "Gast";
 
   constructor(userid: string){
      this.userId = userid

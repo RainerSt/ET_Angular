@@ -1,4 +1,4 @@
-import {Injectable} from '@angular/core';
+import {Injectable, Output} from '@angular/core';
 import {ET} from "./et";
 import {Bedingung} from "./bedingung";
 import {Aktion} from "./aktion";
@@ -8,13 +8,20 @@ import {AktionsAnzeiger} from "./aktionsAnzeiger";
 import {HttpClient} from "@angular/common/http";
 import { User } from './user';
 import { Change } from './change';
+import { Observable, BehaviorSubject  } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ETService {
-  private user:User;
+
+  private userSubject: BehaviorSubject<User>;
+  public user: Observable<User>;
+
   constructor(private http: HttpClient) {
+    this.userSubject = new BehaviorSubject<User>(new User("unknown"))
+    this.user = this.userSubject.asObservable();
+
   }
   createNewETinBundle(etbundle: ETBundle) {
     let newid = 1;
@@ -100,7 +107,7 @@ export class ETService {
       etbundle.changehistory = new Array
     }
     etbundle.changehistory.push(
-      new Change(this.getUser().userId, 
+      new Change(this.userSubject.value.userId, 
                  etbundle.version, 
                  new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString())
     )
@@ -126,14 +133,13 @@ export class ETService {
  
 
   getUser(){
-    if (this.user === undefined){
-      this.user = new User("unnkown");  //defaultUser, replaced by Login-User
-    }
-   
-    return this.user;
+    console.log ("service getUser :" + this.userSubject.value)
+    return this.userSubject.value;
+    
   }
 
   setUser(user: User){
-    this.user = user
+    console.log ("service setUser :" + user)
+    this.userSubject.next(user);
   }
 }

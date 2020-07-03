@@ -1,7 +1,9 @@
+
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
 import {ETService} from "../et.service";
 import { User } from '../user';
+
 
 @Component({
   selector: 'app-login',
@@ -10,7 +12,6 @@ import { User } from '../user';
 })
 export class LoginComponent implements OnInit {
 
-  loggedin:boolean = false
   userid:string = "unknown"
 
   constructor(private router: Router, 
@@ -20,7 +21,6 @@ export class LoginComponent implements OnInit {
   }
   login(){
 
-     this.loggedin = true;
      this.router.navigate(['/etbundle']);
      this.etService.setUser( new User(this.userid))
   }

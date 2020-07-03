@@ -22,10 +22,16 @@
 
       </ul>
     </div>
-    <label>nicht angemeldet !!!</label>&nbsp;&nbsp;&nbsp;&nbsp;
-    <img src="./assets/logon.svg" routerLink="/login"  class="image24">
-    &nbsp;<img src="./assets/logout.svg" routerLink="/logout"  class="image24">
-  </nav>
+    <div *ngIf ="! loggedin">
+      <label> als {{loggedInUser.role}} </label>&nbsp;&nbsp;&nbsp;&nbsp;
+        <img  src="./assets/logon.svg" routerLink="/login"  class="image24">
+     </div>
+    &nbsp;
+    <div *ngIf ="loggedin">
+      <label>{{loggedInUser.userId}} als {{loggedInUser.role}} </label>&nbsp;&nbsp;&nbsp;&nbsp;
+      <img  src="./assets/logout.svg" routerLink="/logout"  class="image24">
+    </div>
+   </nav>
   <router-outlet></router-outlet>
 </div>
 
