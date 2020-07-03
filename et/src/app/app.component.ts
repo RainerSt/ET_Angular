@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import {environment} from "../environments/environment";
-import {ETService} from "./et.service";
+import { environment} from "../environments/environment";
+import { ETService} from "./et.service";
 import { User } from './user';
-
+import { Router} from "@angular/router";
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -14,7 +14,9 @@ export class AppComponent {
   loggedInUser:User;
   public loggedin: boolean = false
 
-  constructor( private etService: ETService,) {
+  constructor( private etService: ETService,
+        private router: Router,
+    ) {
 
   }
 
@@ -26,5 +28,11 @@ export class AppComponent {
          this.loggedin = true
        }
     });
+  }
+
+  logout(){
+    this.etService.setUser(new User("unknown"))
+    this.loggedin = false;
+    this.router.navigate(['/logout']);
   }
 }

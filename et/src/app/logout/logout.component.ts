@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ETService} from "../et.service";
+import { User } from '../user';
 
 @Component({
   selector: 'app-logout',
@@ -7,9 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LogoutComponent implements OnInit {
 
-  constructor() { }
+  constructor(private etService: ETService) { }
 
   ngOnInit(): void {
+    this.etService.setUser(new User("unknown"))
   }
 
 }

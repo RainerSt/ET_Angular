@@ -29,7 +29,7 @@
     &nbsp;
     <div *ngIf ="loggedin">
       <label>{{loggedInUser.userId}} als {{loggedInUser.role}} </label>&nbsp;&nbsp;&nbsp;&nbsp;
-      <img  src="./assets/logout.svg" routerLink="/logout"  class="image24">
+      <img  src="./assets/logout.svg"  (click)="logout()" class="image24">
     </div>
    </nav>
   <router-outlet></router-outlet>
