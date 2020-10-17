@@ -21,14 +21,14 @@ import { ETHelperSort } from '../ethelperSort';
 
 
 export class ETEditComponent implements OnInit {
-  @Input() et :ET; 
+  @Input() et :ET;
   @Output() etDeleteEvent = new EventEmitter<ET>();
   public id: number;
   maxRules : boolean = false;
   maxActions : boolean = false;
   minRules : boolean = false;
   minActions : boolean = false;
-  
+
 
   //-Popups
   popoverTitle = 'Lösche ET';
@@ -36,7 +36,7 @@ export class ETEditComponent implements OnInit {
   popoverMessage = 'Soll diese ET endgültig gelöscht werden ?';
   confirmClicked = false;
   cancelClicked = false;
-  ruleActions = [":", "+", "-" , ">", "<", "*"];
+  ruleActions = [":", "+", "-" , ">", "<"];
 
   visualizedRule:number = -1;
   hints:string[] = [];
@@ -51,7 +51,7 @@ export class ETEditComponent implements OnInit {
   }
 
   ngOnInit() {
-  
+
   }
   hideHints(){
     this.hintsClicked = true;
@@ -96,22 +96,22 @@ export class ETEditComponent implements OnInit {
     }
     neuebedingung.id = bedingungscount + 1;
     this.et.conditions[bedingungscount] = neuebedingung;
-    
+
     if (bedingungscount> 3) this.maxRules = true;
     if (bedingungscount ==1 ) this.minRules = true;
   }
-  removeCondition(){ 
+  removeCondition(){
     var conditioncount = this.et.conditions.length;
     if (conditioncount === 2) return;
     this.et.conditions.splice(conditioncount - 1,1);
   }
 
-  removeAction(){ 
+  removeAction(){
     var actioncount = this.et.actions.length;
     if (actioncount === 1) return;
     this.et.actions.splice(actioncount - 1,1);
   }
-  downCondition(id: number){ 
+  downCondition(id: number){
     console.log ("condition down " + id);
     let from = this.et.conditions[id -1];
     let to   = this.et.conditions[id];
@@ -130,7 +130,7 @@ export class ETEditComponent implements OnInit {
     to.rules = zrules;
   }
 
-  downAction(id: number){ 
+  downAction(id: number){
     console.log ("action down " + id);
     let from = this.et.actions[id -1];
     let to   = this.et.actions[id];
@@ -180,7 +180,7 @@ export class ETEditComponent implements OnInit {
   }
   collapse() {
     console.log("Collapse et " );
-   
+
     if (this.hasBugs()){
       this.et.bugs.push ("Nur fehlerfreie ET's können verdichtet werden");
       return;
@@ -236,6 +236,11 @@ export class ETEditComponent implements OnInit {
     this.visualizedRule = index;
     return false
   }
+  onMouseEnter(index: number){
+    console.log("onMouseEnter: " + index);
+    this.visualizedRule = index;
+    return false
+  }
 
   toggleConditionValue(rule:BedingungsAnzeiger){
     console.log("toggleConditionValue: " + rule);
@@ -257,23 +262,23 @@ export class ETEditComponent implements OnInit {
       case this.ruleActions[1]:
          this.duplicateRule(index);
         break;
-    
+
        case this.ruleActions[2]:
         this.removeRule(index);
         break;
-       
+
        case this.ruleActions[3]:
         this.expandRule(index);
         break;
-       
+
       case this.ruleActions[4]:
        this.collapseRule(index);
         break;
-      
+
       case this.ruleActions[5]:
         this.visualizeRule(index);
         break;
-              
+
        default:
         this.visualizedRule = -1;
          break;
@@ -282,7 +287,7 @@ export class ETEditComponent implements OnInit {
 
   deleteET(){
     console.log("delete et " + this.et.name);
-    
+
       this.etDeleteEvent.emit(this.et);
 
   }
@@ -292,7 +297,7 @@ export class ETEditComponent implements OnInit {
   }
 
 
-  
+
   hilfe(){
     this.hints.push ("Eine Entscheidungstabelle ist ...");
   }

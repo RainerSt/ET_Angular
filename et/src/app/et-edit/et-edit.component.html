@@ -2,21 +2,21 @@
       <!--  {{et | json}}-->
         <br/>
         <div class="form-group">
-           <input [(ngModel)]="et.name" required minlength="5" 
-                 maxlength="255" type="text" class="form-control" 
+           <input [(ngModel)]="et.name" required minlength="5"
+                 maxlength="255" type="text" class="form-control"
                  id="Name" aria-describedby="Name"
-                 placeholder="Name" #name="ngModel" 
+                 placeholder="Name" #name="ngModel"
                  title="name of et" >
-      
-           <textarea class="form-control" 
-                     id="exampleFormControlTextarea1" 
-                     rows="2" 
-                     title="comment of et" 
+
+           <textarea class="form-control"
+                     id="exampleFormControlTextarea1"
+                     rows="2"
+                     title="comment of et"
                      [(ngModel)]="et.comment"></textarea>
-      
-            
+
+
         </div>
-      
+
         <div class="toolbar-right">
           <Button (click)="expand()" class="btn btn-outline-info btn-sm">
             <img src="assets/expand.svg" class="image24" title="Expandiere"></Button>&nbsp;&nbsp;
@@ -33,29 +33,29 @@
             <Button (click)="check()"  class="btn btn-outline-info btn-sm">
             <img src="assets/check.svg" class="image24"  title="Prüfe Korrektheit"></Button>&nbsp;&nbsp;
 
-            
+
             <app-et-java-dialog></app-et-java-dialog>&nbsp;&nbsp;
 
           <Button (click)="jscipt()"  class="btn btn-outline-info btn-sm">
             <img src="assets/javascript.svg" class="image24"></Button>&nbsp;&nbsp;
-            
+
           <Button
                 class="btn btn-outline-danger btn-sm"
-                
+
                 mwlConfirmationPopover
                 [popoverTitle]="popoverTitle"
                 [popoverMessage]="popoverMessage"
                 placement="left"
                 (confirm)="deleteET()"
-                (cancel)="cancelClicked = true"              
+                (cancel)="cancelClicked = true"
               >
               <img src="assets/trash.svg" class="image24">
               </Button>
           &nbsp;
 
-        
+
           <app-et-help-dialog></app-et-help-dialog>
-          
+
 
         </div>
         <!--------------------------------------------------------
@@ -65,7 +65,7 @@
         <div *ngFor="let bug of et.bugs; let first = first;" class="alert alert-danger">
             <label>{{bug}}</label>
         </div>
-      
+
         <br/>
        <!--------------------------------------------------------
           --------------- hinweise              ----------------
@@ -75,17 +75,17 @@
           <div *ngFor="let hint of hints; let i = index" class="alert alert-info">
             <label>{{hint}}</label>
           </div>
-        
+
         </div>
         <!--------------------------------------------------------
        --------------- actions on rules as dropdown select -------
         ------------------------------------------------------->
- 
+
           <div>
             <label>&nbsp;&nbsp;</label>
             <label class="bedingungskommentar"></label>
             <label class="bedingungscode"></label>&nbsp;&nbsp;&nbsp;&nbsp;
-         
+
             <!---------------rules of conditions------------------>
             <select *ngFor="let rule of et.conditions[0].rules; let i = index"
                   #opt (change)="actionOnRule(i, opt.value)"
@@ -97,28 +97,29 @@
                    }"
                    (click)="actionOnRule(i, '*')"
                    (contextmenu)="onRightClick(i)"
+                   (mouseenter)="onMouseEnter(i)"
                    >
                   <option *ngFor="let ruleAction of ruleActions">{{ruleAction}}</option>
 
             </select>
-        </div>  
- 
+        </div>
+
          <!--------------------------------------------------------
           ----------------Conditions              ----------------
           ------------------------------------------------------->
-        <div *ngFor="let condition of et.conditions; 
+        <div *ngFor="let condition of et.conditions;
                      let last = last; let i = index" >
           <label>{{condition.id}}.&nbsp;</label>
           <input class="bedingungskommentar"
-                 [(ngModel)]="condition.comment"  
+                 [(ngModel)]="condition.comment"
                  title={{condition.comment}}>
-      
-          <input class="bedingungscode" 
-                 [(ngModel)]="condition.condition"  
+
+          <input class="bedingungscode"
+                 [(ngModel)]="condition.condition"
                   title={{condition.condition}}>
-                  &nbsp;      
+                  &nbsp;
            <!---------------rules of conditions------------------>
-           <select [(ngModel)]="rule.value" 
+           <select [(ngModel)]="rule.value"
                  *ngFor="let rule of condition.rules; let i = index"
                  [class]="{
                   'aktionsanzeigerhl': visualizedRule == i,
@@ -126,15 +127,16 @@
                   'aktionsanzeigerWide': visualizedRule != i  && et.conditions[0].rules.length < 17
                  }"
                  (contextmenu)="toggleConditionValue(rule)"
+                 (mouseenter)="onMouseEnter(i)"
                  >
                  <option>j</option>
                  <option>n</option>
                  <option>-</option>
-              </select>   
-              
+              </select>
+
               &nbsp;<label (click)="downCondition(condition.id)" title="move down"
                 [hidden]="last" class="btn-sm">
-                <img src="./assets/arrowdown.png"></label>      
+                <img src="./assets/arrowdown.png"></label>
         </div>
 
         <!---------------add remove condition------------------>
@@ -146,15 +148,15 @@
         <!--------------------------------------------------------
           ----------------Actions              ----------------
           ------------------------------------------------------->
-        <div *ngFor="let action of et.actions; 
+        <div *ngFor="let action of et.actions;
                      let last = last;">
           <label>{{action.id}}.&nbsp;</label>
           <input class="aktionskommentar" [(ngModel)]="action.comment">
           <input class="aktionscode" [(ngModel)]="action.action">
           &nbsp;
-          
+
           <!---------------rules of actions------------------>
-          <select [(ngModel)]="rule.value" 
+          <select [(ngModel)]="rule.value"
                   *ngFor="let rule of action.rules; let i = index"
                   class="aktionsanzeiger"
                   [class]="{
@@ -163,12 +165,12 @@
                         'aktionsanzeigerWide': visualizedRule != i  && et.conditions[0].rules.length < 17
                        }"
                  (contextmenu)="toggleActionValue(rule)"
-
+                 (mouseenter)="onMouseEnter(i)"
                   >
                   <option>x</option>
                   <option>-</option>
           </select>
-          &nbsp;<label (click)="downAction(action.id)" 
+          &nbsp;<label (click)="downAction(action.id)"
                  title="move down"
                  [hidden]="last"  class="btn-sm"><img src="./assets/arrowdown.png"></label>
         </div>
@@ -178,6 +180,6 @@
         <label (click)="removeAction()" class="btn-sm"
                 *ngIf="et.actions.length >1"><img src="./assets/minus.png"></label>
         <br/><br/>
-        
-        
+
+
       </div>
